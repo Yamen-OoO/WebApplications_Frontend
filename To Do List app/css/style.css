@@ -1,0 +1,227 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* outline: 1px solid blue; */
+}
+:root{
+    --light-blue:rgba(0, 0, 255, 0.637);
+    --light-gray:rgba(170, 170, 170, 0.699);
+    --light-red:rgba(238, 0, 0, 0.527);
+    --dark-red: rgba(173, 1, 1, 0.795);
+    --transtion-time:.4s ease
+}
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    height: 100vh;
+    padding: 20px;
+    background: linear-gradient(40deg , rgba(2, 247, 255, 0.541) ,var(--light-blue));
+}
+.container{
+    margin: 30px auto;
+    max-width: 550px;
+    width: 100%;
+    /* border: 1px solid black; */
+    border-radius: 5px;
+    background-color: white;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.74);
+    padding-bottom: 20px;
+}
+.container .heading{
+    width: 100%;
+    padding: 40px 30px 10px;
+    /* background-color: red; */
+}
+.container .heading h1{
+    color: blue;
+    font-size: 40px;
+}
+.container .heading p{
+    color: var(--light-gray);
+    margin-bottom: 20px;
+    font-size: 15px;
+    font-weight: 600;
+}
+.container .heading  input{
+    max-width: 85%;
+    width: 100%;
+    padding: 10px 15px;
+    font-size: 20px;
+    outline: none;
+    border: 3px solid var(--light-gray);
+    transition: var(--transtion-time);
+}
+.container .heading  input:focus,
+.container .heading  input:hover{
+    border: 3px solid var(--light-blue);
+}
+.container .heading .add{
+    max-width: 10%;
+    width: 100%;
+    padding: 8px 14px;
+    margin-left: 10px;
+    font-size: 25px;
+    cursor: pointer;
+    font-weight: bold;
+    color: white;
+    border: none;
+    background-color: var(--light-blue);
+    transition: var(--transtion-time);
+}
+.container .heading .add:hover{
+    background-color: blue;
+}
+.container .task_container{
+    padding: 20px 30px;
+    width: 100%;
+    /* background-color: red; */
+}
+.container .task_container .task{
+    max-width: 100%;
+    height: 50px;
+    position: relative;
+    transition: var(--transtion-time);
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+.container .task_container .task:hover{
+    /* border: 3px solid var(--light-blue); */
+}
+.container .task_container .task p{
+    border: 3px solid var(--light-gray);
+    background-color: white;
+    color: var(--light-gray);
+    font-size: 20px;
+    /* background-color: rgba(0, 0, 0, 0.589); */
+    height: 100%;
+    width: 100%;
+    display: inline-block;
+    padding: 10px 20px;
+    transition: var(--transtion-time);
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    font-weight: 500;
+    overflow: hidden;
+}
+.container .task_container .task:hover p{
+    color: black;
+    width: 88%;
+    border: 3px solid var(--light-blue);
+}
+.container .task_container .task span{
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    width: 0%;
+    background-color: var(--light-red);
+    text-align: center;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: var(--transtion-time);
+    opacity: 0;
+    cursor: pointer;
+    font-weight: 500;
+    color: white;
+    border: 3px solid transparent;
+}
+.container .task_container .task:hover span{
+    width: 10%;
+    opacity: 1;
+}
+.container .task_container .task span:hover {
+    background-color: var(--dark-red);
+}
+.container .number_oftask{
+    color: black;
+    padding: 0px 30px;
+    display: inline-block;
+}
+.container .clear_all{
+    color: white;
+    padding: 14px 20px;
+    background-color: var(--light-red);
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 14px;
+    transition: var(--transtion-time);
+}
+.container .clear_all:hover{
+    background-color:var(--dark-red);
+}
+.place_holder{
+    /* max-width: 100%; */
+    width: 100%;
+    height: 100%;
+    background-color: rgba(31, 31, 31, 0.514);
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    display: none;
+    padding: 20px;
+}
+.place_holder .task_deatails{
+    max-width: 700px;
+    width: 100%;
+    height: 500px;
+    background-color: rgb(218, 218, 218);
+    display: flex;
+    gap: 50px;
+    flex-direction: column;
+    padding: 20px 30px;
+    border-radius: 20px;
+    position: relative;
+}
+
+.place_holder .task_deatails span{
+    margin: 0 auto;
+    background-color: red;
+}
+.place_holder .task_deatails #descrption{
+    min-width: 100%;
+    max-width: 100%;
+    max-height: 300px;
+    min-height: 300px;
+    height: 200px;
+    font-size: 20px;
+    padding: 10px;
+    border: 3px solid var(--light-gray);
+    outline: none;
+    transition: var(--transtion-time);
+    color: var(--light-gray);
+    background-color: transparent;
+}
+.place_holder .task_deatails #descrption:focus,
+.place_holder .task_deatails #descrption:hover{
+    border: 3px solid var(--light-blue);
+    color: black;
+}
+.place_holder .task_deatails button.save{
+    width: fit-content;
+    margin: 0px auto;
+    padding: 10px 20px;
+    font-size: 20px;
+}
+.place_holder .task_deatails button.exit{
+    position: absolute;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    right: -10px;
+    top: -10px;
+    z-index: 100;
+    cursor: pointer;
+    background-color: orange;
+    font-weight: bold;
+    color: white;
+    border: none;
+    outline: none;
+}
