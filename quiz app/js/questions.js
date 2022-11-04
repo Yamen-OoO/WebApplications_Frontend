@@ -16,7 +16,7 @@ let q = [
             c:"yasser",
             d:"yassin"
         },
-        correctAns : "A"
+        correctAns : "yamen"
     },
     {
         question:"How old are You",
@@ -26,7 +26,7 @@ let q = [
             c:"44",
             d:"35"
         },
-        correctAns : "B"
+        correctAns : "22"
     },
     {
         question:"Where are you from",
@@ -36,7 +36,7 @@ let q = [
             c:"turkey",
             d:"iraq"
         },
-        correctAns : "c"
+        correctAns : "syria"
     }
 ]
 
@@ -45,10 +45,12 @@ export function chooseQuestion(){
     // choose a question
     let choosenQ = q[Math.floor(Math.random() * q.length)]
 
-    //remow the choosen question from q
+    //remove the choosen question from q
     q.splice(q.indexOf(choosenQ),1)
 
+    
+    let correctAns = choosenQ.correctAns
     let Arranswers = [choosenQ.answers.A,choosenQ.answers.B,choosenQ.answers.c,choosenQ.answers.d]
-    return [choosenQ.question , Arranswers]
+    return [choosenQ.question , Arranswers , correctAns]
 }
 

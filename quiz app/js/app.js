@@ -23,13 +23,27 @@ import {chooseQuestion, q} from "./questions.js";
 
 
 
-chooseQuestion()
-
-const [a,b] = chooseQuestion()
+console.log(q)
+let [a,b ,c] = chooseQuestion()
 console.log(a)
 console.log(b)
+console.log(c)
 let answersdivs = document.querySelectorAll(".game-container .question-contaier .answers span")
-console.log(answersdivs)
+// console.log(answersdivs)
+question11.textContent = a
 answersdivs.forEach((e , i) =>{
     e.textContent = b[i]
+    e.parentElement.onclick = function(){
+        if(e.textContent === c){
+            console.log(true)
+        }
+        else{
+            console.log("false")
+        }
+        [a,b ,c] = chooseQuestion()
+        console.log(q)
+        console.log(a)
+        console.log(b)
+        console.log(c)
+    }
 })
