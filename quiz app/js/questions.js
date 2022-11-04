@@ -41,12 +41,14 @@ let q = [
 ]
 
 export function chooseQuestion(){
-    // console.log(q.length)
+
+    // choose a question
     let choosenQ = q[Math.floor(Math.random() * q.length)]
-    // console.log(choosenQ.question)
+
+    //remow the choosen question from q
     q.splice(q.indexOf(choosenQ),1)
-    // console.log(q.length)
-    // console.table(q)
-    return choosenQ
+
+    let Arranswers = [choosenQ.answers.A,choosenQ.answers.B,choosenQ.answers.c,choosenQ.answers.d]
+    return [choosenQ.question , Arranswers]
 }
 
