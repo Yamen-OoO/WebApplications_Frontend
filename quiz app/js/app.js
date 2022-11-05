@@ -47,3 +47,19 @@ answersdivs.forEach((e , i) =>{
         console.log(c)
     }
 })
+
+// function countdown(){
+//     let number = document.querySelector(".intro-container .count-down .number")
+//     number.textContent = "3"
+//     let count = setInterval(function(){
+//         number.textContent--
+//         if(number.textContent === "0"){
+//             clearInterval(count)
+//             number.style.animationPlayState = "paused"
+//         }
+//     },1000)
+// }
+// window.onload = function(){
+//     countdown()
+
+// }
