@@ -1,10 +1,3 @@
-// export {arr} 
-// export {sayhello}
-
-// let arr = [1,2,3,4]
-// function sayhello(){
-//     console.log("hello world")
-// }
 export {q}
 
 let q = [
@@ -39,7 +32,6 @@ let q = [
         correctAns : "syria"
     }
 ]
-
 export function chooseQuestion(){
 
     // choose a question

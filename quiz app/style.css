@@ -70,23 +70,23 @@ body{
     background-color: red;
 }
 .intro-container{
-    position:relative;
-    top: 000px;
+    position:absolute;
+    top: 00px;
     width: 100vw;
     height: 100vh;
-    background-color: rgba(0, 0, 0, 0.815);
+    background-color: rgba(90, 88, 88, 0.459);
     /* display: none; */
 }
 .intro-container .form{
     position: absolute;
-    border: 1px solid black;
     padding: 20px 30px ;
-    background-color: rgb(150, 40, 40);
+    background-color: rgb(40, 110, 150);
     top: 50%;
     left: 50%;
     transform: translate(-50% , -50%);
-    width: 600px;
-    height: 500px;
+    border-radius: 20px;
+    width: 400px;
+    height: 400px;
 }
 .intro-container .count-down{
     position: absolute;
@@ -96,22 +96,55 @@ body{
     top: 50%;
     left: 50%;
     transform: translate(-50% , -50%);
-    width: 600px;
-    height: 500px;
-    text-align: center;
-    line-height: 450px;
+    width: 400px;
+    height: 400px;
+    justify-content: center;
+    align-items: center;
+    display: none;
 }
 .intro-container .count-down .number{
-    animation: count 1s ease infinite;
+    animation: count 1.6s ease infinite;
 }
 @keyframes count {
     0%{
         opacity: 1;
-        font-size: 12rem;
+        font-size: 16rem;
     }
     100%{
         opacity: 0;
         font-size: 7rem;
     }
     
+}
+.intro-container .form h1{
+    margin: 10px auto 30px;
+    font-size: 2rem;
+    color: white;
+}
+.intro-container .form input{
+    display: block;
+    padding: 10px;
+    font-size: 1.2rem;
+    border: none;
+    outline: none;
+}
+.intro-container .form select{
+    display: block;
+    margin: 20px 0;
+    padding: 10px;
+    font-size: 1.1rem;
+}
+.intro-container .form button{
+    padding: 10px 0px;
+    width: 150px;
+    font-size: 1.2rem;
+    display: block;
+    margin: 80px auto;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    border: 4px solid aqua;
+    background-color: transparent;
+    font-weight: bold;
+    color: white;
 }
