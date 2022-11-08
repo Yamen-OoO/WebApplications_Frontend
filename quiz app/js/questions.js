@@ -33,16 +33,19 @@ let q = [
     }
 ]
 export function chooseQuestion(){
-
     // choose a question
-    let choosenQ = q[Math.floor(Math.random() * q.length)]
-
-    //remove the choosen question from q
-    q.splice(q.indexOf(choosenQ),1)
-
-    
-    let correctAns = choosenQ.correctAns
-    let Arranswers = [choosenQ.answers.A,choosenQ.answers.B,choosenQ.answers.c,choosenQ.answers.d]
-    return [choosenQ.question , Arranswers , correctAns]
+    if(q.length !==0){
+        let choosenQ = q[Math.floor(Math.random() * q.length)]
+        // console.log(choosenQ)
+        //remove the choosen question from q ... so not show agian
+        q.splice(q.indexOf(choosenQ),1)
+        let correctAns = choosenQ.correctAns
+        let Arranswers = [choosenQ.answers.A,choosenQ.answers.B,choosenQ.answers.c,choosenQ.answers.d]
+        // console.log(q.length , "number of questions")
+        return [choosenQ.question , Arranswers , correctAns]
+    }
+    else{
+        return false
+    }
 }
 

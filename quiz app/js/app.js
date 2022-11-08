@@ -7,48 +7,38 @@
 // console.log(all.arr)
 // all.sayhello()
 
-let question11 = document.querySelector(".game-container .question-contaier h3 #Question")
 
 import {chooseQuestion, q} from "./questions.js";
 import {newUser} from "./user.js"
-// console.log(q[0])
-// console.log(q[0].question)
-// console.log(q[0].correctAns)
-
-// console.log(chooseQuestion())
-// console.log(q)
-// console.log(chooseQuestion())
-// console.log(q)
-// console.log(chooseQuestion())
-// console.log(q)
 
 
 
-// console.log(q)
-// let [a,b ,c] = chooseQuestion()
-// console.log(a)
-// console.log(b)
-// console.log(c)
-// let answersdivs = document.querySelectorAll(".game-container .question-contaier .answers span")
-// // console.log(answersdivs)
-// question11.textContent = a
-// answersdivs.forEach((e , i) =>{
-//     e.textContent = b[i]
-//     e.parentElement.onclick = function(){
-//         if(e.textContent === c){
-//             console.log(true)
-//         }
-//         else{
-//             console.log("false")
-//         }
-//         [a,b ,c] = chooseQuestion()
-//         console.log(q)
-//         console.log(a)
-//         console.log(b)
-//         console.log(c)
-//     }
-// })
-
+let [a,b ,c] = chooseQuestion()
+function changeQuestion(){
+    let answersdivs = document.querySelectorAll(".game-container .question-contaier .answers span")
+    let question11 = document.querySelector(".game-container .question-contaier h3 #Question")
+    question11.textContent = a
+    answersdivs.forEach((e , i) =>{
+        e.textContent = b[i]
+        e.parentElement.onclick = function(){
+            if(e.textContent === c){
+                console.log(true , "answer") 
+            }
+            else{
+                console.log(false , "answer")
+            }
+            let check = chooseQuestion()
+            if(check === false){
+                return alert("done")
+            }
+            else{
+                [a,b,c] = check
+            }
+            changeQuestion()
+        }
+    })
+}
+changeQuestion()
 
 
 let startButton = document.querySelector(".intro-container .form button")
