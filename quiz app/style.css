@@ -92,9 +92,8 @@ body{
 }
 .intro-container .count-down{
     position: absolute;
-    border: 1px solid black;
     padding: 20px 30px ;
-    background-color: rgb(150, 40, 40);
+    background-color: rgb(40, 115, 150);
     top: 50%;
     left: 50%;
     transform: translate(-50% , -50%);

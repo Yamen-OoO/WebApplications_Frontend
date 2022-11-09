@@ -1,5 +1,4 @@
 export {q}
-
 let q = [
     {
         question:"what is your name",
@@ -30,8 +29,80 @@ let q = [
             d:"iraq"
         },
         correctAns : "syria"
+    },
+    {
+        question:"Where are you from",
+        answers :{
+            A:"syria",
+            B:"lebanon",
+            c:"turkey",
+            d:"iraq"
+        },
+        correctAns : "syria"
+    },
+    {
+        question:"Where are you from",
+        answers :{
+            A:"syria",
+            B:"lebanon",
+            c:"turkey",
+            d:"iraq"
+        },
+        correctAns : "syria"
+    },
+    {
+        question:"Where are you from",
+        answers :{
+            A:"syria",
+            B:"lebanon",
+            c:"turkey",
+            d:"iraq"
+        },
+        correctAns : "syria"
+    },
+    {
+        question:"Where are you from",
+        answers :{
+            A:"syria",
+            B:"lebanon",
+            c:"turkey",
+            d:"iraq"
+        },
+        correctAns : "syria"
+    },
+    {
+        question:"Where are you from",
+        answers :{
+            A:"syria",
+            B:"lebanon",
+            c:"turkey",
+            d:"iraq"
+        },
+        correctAns : "syria"
+    },
+    {
+        question:"Where are you from",
+        answers :{
+            A:"syria",
+            B:"lebanon",
+            c:"turkey",
+            d:"iraq"
+        },
+        correctAns : "syria"
+    },
+    {
+        question:"Where are you from",
+        answers :{
+            A:"syria",
+            B:"lebanon",
+            c:"turkey",
+            d:"iraq"
+        },
+        correctAns : "syria"
     }
+    
 ]
+export let questionNumbers = 0
 export function chooseQuestion(){
     // choose a question
     if(q.length !==0){
@@ -39,9 +110,10 @@ export function chooseQuestion(){
         // console.log(choosenQ)
         //remove the choosen question from q ... so not show agian
         q.splice(q.indexOf(choosenQ),1)
+        console.log(q.length , "number of questions left")
         let correctAns = choosenQ.correctAns
         let Arranswers = [choosenQ.answers.A,choosenQ.answers.B,choosenQ.answers.c,choosenQ.answers.d]
-        // console.log(q.length , "number of questions")
+        questionNumbers++
         return [choosenQ.question , Arranswers , correctAns]
     }
     else{
