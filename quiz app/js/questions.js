@@ -105,7 +105,7 @@ let q = [
 export let questionNumbers = 0
 export function chooseQuestion(){
     // choose a question
-    if(q.length !==0){
+    if(q.length >=! 0){
         let choosenQ = q[Math.floor(Math.random() * q.length)]
         // console.log(choosenQ)
         //remove the choosen question from q ... so not show agian

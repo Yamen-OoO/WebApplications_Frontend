@@ -102,6 +102,7 @@ body{
     justify-content: center;
     align-items: center;
     display: none;
+    border-radius: 20px;
 }
 .intro-container .count-down .number{
     animation: count 1.6s ease infinite;
