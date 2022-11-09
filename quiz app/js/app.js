@@ -29,7 +29,8 @@ function changeQuestion(){
             }
             let check = chooseQuestion()
             if(check === false){
-                return alert("done")
+                alert("done")
+                window.location = " "
             }
             else{
                 [a,b,c] = check
@@ -41,9 +42,14 @@ function changeQuestion(){
 changeQuestion()
 
 
+
 let startButton = document.querySelector(".intro-container .form button")
 let inputForm = document.querySelector(".intro-container .form")
+let userName = document.querySelector(".intro-container .form input.input-name")
 startButton.onclick = function(){
+    if(userName.value === ""){
+        return alert("please enter your name")
+    }
     newUser()
     inputForm.style.display = "none"
     document.querySelector(".intro-container .count-down").style.display = "flex"
