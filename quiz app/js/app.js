@@ -9,10 +9,11 @@
 
 
 import {chooseQuestion, q, questionNumbers} from "./questions.js";
+import { localStorgeBackUsers, MakeResultList } from "./result.js";
 import {newUser} from "./user.js"
 
 
-
+let trueAns = 0
 let [a,b ,c] = chooseQuestion()
 function changeQuestion(){
     document.querySelector(".game-container .question-contaier h3 span").textContent = questionNumbers
@@ -26,6 +27,7 @@ function changeQuestion(){
             if(e.textContent === c){
                 console.log(true , "answer") 
                 trueAnswer()
+                trueAns++
             }
             else{
                 console.log(false , "answer")
@@ -33,8 +35,11 @@ function changeQuestion(){
             }
             let check = chooseQuestion()
             if(check === false){
-                alert("done")
-                window.location = " "
+                // alert("done")
+                newUser(trueAns)
+                localStorgeBackUsers()
+                console.log("show reult")
+                // MakeResultList()
             }
             else{
                 [a,b,c] = check
@@ -54,7 +59,7 @@ startButton.onclick = function(){
         return alert("please enter your name")
     }
     changeQuestion()
-    newUser()
+    // newUser()
     inputForm.style.display = "none"
     document.querySelector(".intro-container .count-down").style.display = "flex"
     countdown()
@@ -97,3 +102,8 @@ function falseAnswer(){
     console.log(point)
     pointNum++
 }
+
+
+
+
+// console.log(localStorage[1])

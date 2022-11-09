@@ -6,12 +6,12 @@
 body{
     font-family: 'Nunito Sans', sans-serif;
     background-color: rgb(182, 182, 182);
-    height: 100vh;
-    overflow: hidden;
+    /* height: 100vh;
+    overflow: hidden; */
 }
 .game-container{
     width: 500px;
-    height: 500px;
+    /* height: 500px; */
     background-color: rgb(255, 255, 255);
     border: 3px solid rgba(0, 0, 0, 0);
     margin: 100px auto;
@@ -50,7 +50,7 @@ body{
 
 }
 .game-container .question-shower{
-    padding: 0px 30px;
+    padding: 20px 30px;
     display: flex;
     gap: 20px;
     align-items: center;
@@ -149,4 +149,51 @@ body{
     background-color: transparent;
     font-weight: bold;
     color: white;
+}
+
+
+.result-container{
+    width: 500px;
+    min-height: 400px;
+    padding: 20px 30px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50% , -50%);
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    background-color: rgb(40, 110, 150);
+    display: none;
+}
+.result-container .table{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.result-container .table .row{
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    /* border: 1px solid blue; */
+    font-size: 1.2rem;
+}
+.result-container .table .row-detail{
+    color: white;
+    font-weight: bold;
+}
+.result-container .table  .users-rows{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.result-container .table  .user-row span{
+    min-width: 45px;
+    text-align: center;
+}
+.result-container button{
+    width: 100px;
+    margin: 0 auto;
+    padding: 10px 0;
+    font-weight: bold;
 }

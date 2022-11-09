@@ -110,7 +110,7 @@ export function chooseQuestion(){
         // console.log(choosenQ)
         //remove the choosen question from q ... so not show agian
         q.splice(q.indexOf(choosenQ),1)
-        console.log(q.length , "number of questions left")
+        console.log("you see now",q.length+1 , q.length , "number of questions left")
         let correctAns = choosenQ.correctAns
         let Arranswers = [choosenQ.answers.A,choosenQ.answers.B,choosenQ.answers.c,choosenQ.answers.d]
         questionNumbers++
