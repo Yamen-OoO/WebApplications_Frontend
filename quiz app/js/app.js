@@ -1,53 +1,9 @@
-// // import {arr} from "./questions.js"
-// import {arr as array } from "./questions.js"
-// import {sayhello as message} from "./questions.js"
-// console.log(array)
-// message()
-// import * as all from "./questions.js"
-// console.log(all.arr)
-// all.sayhello()
-
-
 import {chooseQuestion, q, questionNumbers} from "./questions.js";
 import { localStorgeBackUsers, MakeResultList } from "./result.js";
 import {newUser} from "./user.js"
 
 
 let trueAns = 0
-let [a,b ,c] = chooseQuestion()
-function changeQuestion(){
-    document.querySelector(".game-container .question-contaier h3 span").textContent = questionNumbers
-    document.querySelector(".game-container .question-shower .number-shower span").textContent = questionNumbers
-    let answersdivs = document.querySelectorAll(".game-container .question-contaier .answers span")
-    let question11 = document.querySelector(".game-container .question-contaier h3 #Question")
-    question11.textContent = a
-    answersdivs.forEach((e , i) =>{
-        e.textContent = b[i]
-        e.parentElement.onclick = function(){
-            if(e.textContent === c){
-                console.log(true , "answer") 
-                trueAnswer()
-                trueAns++
-            }
-            else{
-                console.log(false , "answer")
-                falseAnswer()
-            }
-            let check = chooseQuestion()
-            if(check === false){
-                // alert("done")
-                newUser(trueAns)
-                localStorgeBackUsers()
-                console.log("show reult")
-                // MakeResultList()
-            }
-            else{
-                [a,b,c] = check
-            }
-            changeQuestion()
-        }
-    })
-}
 
 
 
@@ -59,13 +15,48 @@ startButton.onclick = function(){
         return alert("please enter your name")
     }
     changeQuestion()
-    // newUser()
     inputForm.style.display = "none"
     document.querySelector(".intro-container .count-down").style.display = "flex"
     countdown()
 }
 
+let [a,b ,c] = chooseQuestion()
+// a is the question
+// b is an a array of answers
+// c is the true answer
 
+
+function changeQuestion(){
+    document.querySelector(".game-container .question-contaier h3 span").textContent = questionNumbers
+    document.querySelector(".game-container .question-shower .number-shower span").textContent = questionNumbers
+    let answersdivs = document.querySelectorAll(".game-container .question-contaier .answers span")
+    let question11 = document.querySelector(".game-container .question-contaier h3 #Question")
+    question11.textContent = a
+    answersdivs.forEach((e , i) =>{
+        e.textContent = b[i]
+        e.parentElement.onclick = function(){
+            if(e.textContent === c){
+                // console.log(true , "answer") 
+                trueAnswer()
+                trueAns++
+            }
+            else{
+                // console.log(false , "answer")
+                falseAnswer()
+            }
+            let check = chooseQuestion()
+            if(check === false){
+                alert("Show result")
+                newUser(trueAns)
+                localStorgeBackUsers()
+            }
+            else{
+                [a,b,c] = check
+            }
+            changeQuestion()
+        }
+    })
+}
 
 
 
@@ -87,23 +78,21 @@ function countdown(){
 
 let pointNum = 0
 let questionShower = document.querySelectorAll(".game-container .question-shower .points-shower span")
-// console.log(questionShower)
 function trueAnswer(){
     let point = questionShower[pointNum]
     point.classList.add("true")
     point.classList.remove("off")
-    console.log(point)
     pointNum++
 }
 function falseAnswer(){
     let point = questionShower[pointNum]
     point.classList.add("false")
     point.classList.remove("off")
-    console.log(point)
     pointNum++
 }
 
 
 
 
-// console.log(localStorage[1])
+// change the questions
+// list with the same points ...same backcol if they all have 10 points

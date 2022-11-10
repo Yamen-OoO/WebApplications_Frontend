@@ -185,7 +185,10 @@ body{
 .result-container .table  .users-rows{
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 5px;
+}
+.result-container .table  .user-row{
+    padding: 10px;
 }
 .result-container .table  .user-row span{
     min-width: 45px;
@@ -196,4 +199,18 @@ body{
     margin: 0 auto;
     padding: 10px 0;
     font-weight: bold;
+}
+
+.result-container .table  .user-row:nth-child(1){
+    background-color: gold;
+}
+.result-container .table  .user-row:nth-child(2){
+    background-color: #aaa;
+}
+.result-container .table  .user-row:nth-child(3){
+    background-color: rgb(211, 94, 58);
+}
+.result-container .table  .user-row:last-child{
+    background-color: rgba(255, 0, 0, 0.664);
+    color: white;
 }

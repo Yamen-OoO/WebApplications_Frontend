@@ -1,3 +1,4 @@
+// func LocalStorgeBackUsers() is used to display the content of the local stroge ...when you ask for the result
 
 export function localStorgeBackUsers(){
     let arr = []
@@ -21,26 +22,26 @@ function sortArray(arr){
         }
         // console.log(arr[i].points)
     }
-    console.log(arr)
+    // console.log(arr)
     return arr
 }
 
 
 // make the result container
 let UsersRows = document.querySelector(".result-container .table .users-rows")
-console.log(UsersRows)
+// console.log(UsersRows)
 
 export function MakeResultList(arr){
-    let userRow = document.createElement("div")
-    userRow.classList.add("row")
-    userRow.classList.add("user-row")
-    let rank = document.createElement("span")
-    rank.classList.add("user-rank")
-    let UserName = document.createElement("span")
-    rank.classList.add("user-name")
-    let result = document.createElement("span")
-    rank.classList.add("user-result")
     for(let i =0 ; i<arr.length; i++){
+        let userRow = document.createElement("div")
+        userRow.classList.add("row")
+        userRow.classList.add("user-row")
+        let rank = document.createElement("span")
+        rank.classList.add("user-rank")
+        let UserName = document.createElement("span")
+        rank.classList.add("user-name")
+        let result = document.createElement("span")
+        rank.classList.add("user-result")
         rank.textContent = i+1
         UserName.textContent = arr[i].name
         result.textContent = arr[i].points
@@ -51,3 +52,9 @@ export function MakeResultList(arr){
     }
     document.querySelector(".result-container").style.display = "flex"
 }
+
+let closeBtn = document.querySelector(".result-container button")
+closeBtn.addEventListener("click",function(){
+    alert("try again")
+    window.location = " "
+})

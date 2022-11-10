@@ -1,7 +1,7 @@
 export {q}
 let q = [
     {
-        question:"what is your name",
+        question:"what does Html stands for? ",
         answers :{
             A:"yamen",
             B:"majd",
@@ -102,22 +102,27 @@ let q = [
     }
     
 ]
+
+// if i want to add 20 question ...the condition of chooseQuestion 
+// must changed ....carefull with the numbers
 export let questionNumbers = 0
 export function chooseQuestion(){
-    // choose a question
+    // choose a Rando question
     if(q.length >=! 0){
         let choosenQ = q[Math.floor(Math.random() * q.length)]
         // console.log(choosenQ)
+
         //remove the choosen question from q ... so not show agian
         q.splice(q.indexOf(choosenQ),1)
-        console.log("you see now",q.length+1 , q.length , "number of questions left")
+        // console.log("you see now",q.length+1 , q.length , "number of questions left")
         let correctAns = choosenQ.correctAns
         let Arranswers = [choosenQ.answers.A,choosenQ.answers.B,choosenQ.answers.c,choosenQ.answers.d]
         questionNumbers++
+        // console.log("q length = " , q.length)
         return [choosenQ.question , Arranswers , correctAns]
     }
+    // if the questions are done
     else{
         return false
     }
 }
-
