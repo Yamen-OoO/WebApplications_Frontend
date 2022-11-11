@@ -2,10 +2,12 @@ import {chooseQuestion, q, questionNumbers} from "./questions.js";
 import { localStorgeBackUsers, MakeResultList } from "./result.js";
 import {newUser} from "./user.js"
 
+let CorrectAudio = new Audio("/quiz app/Correct answer sound effect _ No copyright.mp3")
+let wrongAudio = new Audio("/quiz app/Incorrect sound effect.mp3")
+CorrectAudio.volume = 0.4
+wrongAudio.volume = 0.4
 
 let trueAns = 0
-
-
 
 let startButton = document.querySelector(".intro-container .form button")
 let inputForm = document.querySelector(".intro-container .form")
@@ -38,25 +40,32 @@ function changeQuestion(){
             if(e.textContent === c){
                 // console.log(true , "answer") 
                 trueAnswer()
+                CorrectAudio.play()
                 trueAns++
             }
             else{
                 // console.log(false , "answer")
                 falseAnswer()
+                wrongAudio.play()
             }
             let check = chooseQuestion()
             if(check === false){
-                alert("Show result")
+                // alert("Show result")
                 newUser(trueAns)
-                localStorgeBackUsers()
+                setTimeout(() => {
+                    localStorgeBackUsers()
+                }, 1000);
             }
             else{
+                // get a new question
                 [a,b,c] = check
             }
+            // repate this function
             changeQuestion()
         }
     })
 }
+
 
 
 
@@ -75,7 +84,6 @@ function countdown(){
 }
 
 
-
 let pointNum = 0
 let questionShower = document.querySelectorAll(".game-container .question-shower .points-shower span")
 function trueAnswer(){
@@ -90,9 +98,14 @@ function falseAnswer(){
     point.classList.remove("off")
     pointNum++
 }
-
-
-
-
 // change the questions
 // list with the same points ...same backcol if they all have 10 points
+// clean up a little bit the css code
+// remove the alert (done)
+
+
+// let arraytest = [2,4,6,1,2,4]
+
+// shuffleArray(arraytest)
+// console.log(arraytest)
+// console.log(Math.floor(Math.random() * 5))

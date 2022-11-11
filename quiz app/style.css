@@ -6,8 +6,8 @@
 body{
     font-family: 'Nunito Sans', sans-serif;
     background-color: rgb(182, 182, 182);
-    /* height: 100vh;
-    overflow: hidden; */
+    height: 100vh;
+    overflow: hidden;
 }
 .game-container{
     width: 500px;
@@ -31,7 +31,7 @@ body{
     margin-top: 40px;
 }
 .game-container .question-contaier h3{
-    font-size: 2rem;
+    font-size: 1.4rem;
 }
 .game-container .question-contaier .answers{
     font-size: 1.4rem;
@@ -45,7 +45,7 @@ body{
     transition: .7s ease;
 }
 .game-container .question-contaier .answers div:hover{
-    background-color: aquamarine;
+    background-color: rgb(33, 189, 236);
     border: 1px solid #aaa;
 
 }
@@ -210,7 +210,7 @@ body{
 .result-container .table  .user-row:nth-child(3){
     background-color: rgb(211, 94, 58);
 }
-.result-container .table  .user-row:last-child{
+/* .result-container .table  .user-row:last-child{
     background-color: rgba(255, 0, 0, 0.664);
     color: white;
-}
+} */

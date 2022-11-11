@@ -15,4 +15,3 @@ export function newUser(trueAns){
     userName.value = " "
     // console.log(localStorage)
 }
-// when the game is done ..... you display the result of the game and the squence of playres in  order of points...

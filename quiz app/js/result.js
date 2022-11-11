@@ -1,4 +1,6 @@
+// when the game is done ..... you display the result of the game and the squence of playres in  order of points...
 // func LocalStorgeBackUsers() is used to display the content of the local stroge ...when you ask for the result
+
 
 export function localStorgeBackUsers(){
     let arr = []
@@ -10,7 +12,7 @@ export function localStorgeBackUsers(){
 }
 
 
-// when show the result at the end of the game
+// when show the result at the end of the game it must be sorted
 function sortArray(arr){
     for(let i =0 ; i<arr.length; i++){
         for(let j=0; j<arr.length; j++){
@@ -20,7 +22,6 @@ function sortArray(arr){
                 arr[j] = box
             }
         }
-        // console.log(arr[i].points)
     }
     // console.log(arr)
     return arr
@@ -29,8 +30,6 @@ function sortArray(arr){
 
 // make the result container
 let UsersRows = document.querySelector(".result-container .table .users-rows")
-// console.log(UsersRows)
-
 export function MakeResultList(arr){
     for(let i =0 ; i<arr.length; i++){
         let userRow = document.createElement("div")
