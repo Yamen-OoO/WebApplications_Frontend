@@ -41,114 +41,114 @@ let q = [
         correctAns : "32"
     },
     {
-        question:"",
+        question:"Which of the following function is user defined",
         answers :{
-            A:"",
-            B:"",
-            c:"",
-            d:""
+            A:"printf",
+            B:"scanf",
+            c:"main",
+            d:"none"
         },
-        correctAns : ""
+        correctAns : "main"
     },
     {
-        question:"",
+        question:"In C,we uesd for input/output?",
         answers :{
-            A:"",
-            B:"",
-            c:"",
-            d:""
+            A:"cin & cout",
+            B:"input & output",
+            c:"scanf & printf",
+            d:"none"
         },
-        correctAns : ""
+        correctAns : "scanf & printf"
     },
     {
-        question:"",
+        question:"What is the range of int data type",
         answers :{
-            A:"",
-            B:"",
-            c:"",
-            d:""
+            A:"0 to 255",
+            B:"-127 to +127",
+            c:"-32768 to + 32768",
+            d:"none"
         },
-        correctAns : ""
+        correctAns : "-32768 to + 32768"
     },
     {
-        question:"",
+        question:"In which year , C language was Developed",
         answers :{
-            A:"",
-            B:"",
-            c:"",
-            d:""
+            A:"1979",
+            B:"1972",
+            c:"1991",
+            d:"2002"
         },
-        correctAns : ""
+        correctAns : "1972"
     },
     {
-        question:"",
+        question:"Which type of Language is C",
         answers :{
-            A:"",
-            B:"",
-            c:"",
-            d:""
+            A:"Procedural oriented programming",
+            B:"object oriented programming",
+            c:"semi-object oriented porgramming",
+            d:"none"
         },
-        correctAns : ""
+        correctAns : "Procedural oriented programming"
     },
     {
-        question:"",
+        question:"The format identifier '%c' is used for which datatype ",
         answers :{
-            A:"",
-            B:"",
-            c:"",
-            d:""
+            A:"int",
+            B:"double",
+            c:"char",
+            d:"float"
         },
-        correctAns : ""
+        correctAns : "char"
     },
     {
-        question:"",
+        question:"sizeof() is a __",
         answers :{
-            A:"",
-            B:"",
-            c:"",
-            d:""
+            A:"function",
+            B:"variable",
+            c:"object",
+            d:"operator"
         },
-        correctAns : ""
+        correctAns : "operator"
     },
     {
-        question:"",
+        question:"Breack statement is used for __",
         answers :{
-            A:"",
-            B:"",
-            c:"",
-            d:""
+            A:"Quit a program",
+            B:"Quit the current itration",
+            c:"If condtion",
+            d:"none"
         },
-        correctAns : ""
+        correctAns : "Quit the current itration"
     },
     {
-        question:"",
+        question:"Which of the following is a logical NOT operator",
         answers :{
-            A:"",
-            B:"",
-            c:"",
-            d:""
+            A:"$$",
+            B:"&&",
+            c:"!",
+            d:"||"
         },
-        correctAns : ""
+        correctAns : "!"
     },
     {
-        question:"",
+        question:"What is the default value of static variable ?",
         answers :{
-            A:"",
-            B:"",
-            c:"",
-            d:""
+            A:"0",
+            B:"null",
+            c:"garbage",
+            d:"none"
         },
-        correctAns : ""
+        correctAns : "0"
     },
     {
-        question:"",
+        question:"Prototype of a function means __",
         answers :{
-            A:"",
-            B:"",
-            c:"",
-            d:""
+            A:"Name of a function",
+            B:"Parameter of a function",
+            c:"Declartion of a function",
+            d:"All"
         },
-        correctAns : ""
+        correctAns : "All"
     },
 ]
 

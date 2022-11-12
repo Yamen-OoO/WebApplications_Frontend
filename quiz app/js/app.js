@@ -2,8 +2,8 @@ import {chooseQuestion, q, questionNumbers} from "./questions.js";
 import { localStorgeBackUsers, MakeResultList } from "./result.js";
 import {newUser} from "./user.js"
 
-let CorrectAudio = new Audio("/quiz app/Correct answer sound effect _ No copyright.mp3")
-let wrongAudio = new Audio("/quiz app/Incorrect sound effect.mp3")
+let CorrectAudio = new Audio("/Correct answer sound effect _ No copyright.mp3")
+let wrongAudio = new Audio("/Incorrect sound effect.mp3")
 CorrectAudio.volume = 0.4
 wrongAudio.volume = 0.4
 
