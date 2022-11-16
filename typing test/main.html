@@ -4,62 +4,69 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Signika:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <title>Document</title>
 </head>
 <body>
-    <div class="game-container">
+    <div class="container">
+        <div class="game-container">
 
-        <div class="title">Type Test</div>
-        <div class="words-line">
-            <div class="line-one">Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti nostrum?</div>
-            <div class="line-tow">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Doloremque, vero!</div>
+            <div class="title">Type Test</div>
+            <div class="words-line">
+                <div class="line-one line">Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti nostrum?</div>
+                <div class="line-tow line">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Doloremque, vero!</div>
+            </div>
+            <div class="control">
+                <input type="text" spellcheck="fale">
+                <span class="timer">1:00</span>
+                <button>Again</button>
+            </div>
+            
         </div>
-        <div class="control">
-            <input type="text">
-            <span class="timer">1:00</span>
-            <button>Again</button>
+    
+    
+    
+        <div class="control-container">
+    
+            <div class="row-timer row">
+                <div class="test-duration detail">Test Duration</div>
+                <div class="buttons">
+                    <button class="choosen" data-value="0:10">0:10</button>
+                    <button data-value="0:30">0:30</button>
+                    <button data-value="1:00">1:00</button>
+                    <button data-value="2:00">2:00</button>
+                </div>
+            </div>
+    
+            <div class="row-word row">
+                <div class="word-list detail">word-list</div>
+                <div class="buttons">
+                    <button data-value="Simple">Simple</button>
+                    <button data-value="Advanced">Advanced</button>
+                </div>
+            </div>
+            
+            <div class="row-number row">
+                <div class="Numbers detail">Numbers</div>
+                <div class="buttons">
+                    <button data-value="on">On</button>
+                    <button data-value="off">Off</button>
+                </div>
+            </div>
+    
+            <div class="row-showTimer row">
+                <div class="-show-timer detail">Show Timer</div>
+                <div class="buttons">
+                    <button data-value="on">ON</button>
+                    <button data-value="off">Off</button>
+                </div>
+            </div>
+            
         </div>
-        
     </div>
-
-
-
-    <div class="control-container">
-
-        <div class="row-timer row">
-            <div class="test-duration detail">Test Duration</div>
-            <div class="buttons">
-                <button data-value="0:10">0:10</button>
-                <button data-value="0:30">0:30</button>
-                <button data-value="1:00">1:00</button>
-                <button data-value="2:00">2:00</button>
-            </div>
-        </div>
-
-        <div class="row-word row">
-            <div class="word-list detail">word-list</div>
-            <div class="buttons">
-                <button data-value="Simple">Simple</button>
-                <button data-value="Advanced">Advanced</button>
-            </div>
-        </div>
-        
-        <div class="row-number row">
-            <div class="Numbers detail">Numbers</div>
-            <div class="buttons">
-                <button data-value="on">On</button>
-                <button data-value="off">Off</button>
-            </div>
-        </div>
-
-        <div class="row-showTimer row">
-            <div class="-show-timer detail">Show Timer</div>
-            <div class="buttons">
-                <button data-value="on">ON</button>
-                <button data-value="off">Off</button>
-            </div>
-        </div>
-        
-    </div>
+ 
 </body>
 </html>
