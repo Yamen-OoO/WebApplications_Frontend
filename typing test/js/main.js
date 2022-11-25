@@ -1,11 +1,4 @@
-var text
-fetch('/lines.json')
-.then(response => response.text())
-.then(text1 => text = text1)
-
-// setTimeout(function(){
-//     console.log(JSON.parse(text))
-// },100)
+import preparelines, { a } from "./preparingLines.js"
 
 
 
@@ -17,24 +10,43 @@ let TimerBtns = document.querySelectorAll(".container .control-container .row-sh
 let inputAreat = document.querySelector(".container .control input")
 let time = document.querySelector(".container .game-container .control span.timer")
 let AgainButton = document.querySelector(".container .game-container .control button")
+let line1 = document.querySelector(".container .game-container .words-line .line-one")
+let line2 = document.querySelector(".container .game-container .words-line .line-tow")
+console.log(line1)
+console.log(line2)
+
 
 inputAreat.addEventListener("focus", function(e){
     console.log(e.target)
-    e.target.onkeydown = function(){
-        console.log("hello")
+    e.target.onkeydown = function(e){
+        console.log(e.key)
         // start the game
         //
     }
 
 })
+console.log(a)
+let text = preparelines()
+
+setTimeout(() => {
+    let lines = Array(text)[0].split(",")
+    console.table(lines)
+    putLines(lines)
+}, 1000);
+function putLines(lines){  
+    line1.textContent = lines[1]
+    line2.textContent = lines[5]
+    console.log(line1)
+    console.log(line2)
+}
 
 
-//when user enters the game ...there are tow status 
+//when user enters the game ...there are tow status :
 // one ...he plays on the default settings 1:00 , simple , off , on
 // in this way ... the lines are prepared on a loaded page
 // tow ... he changes the seetings of the game
 // in this way ... the lines will be changed ...using the function prepare lines
-// ok .. fucntion preparelines ...will be called when i focus the input
+// ok .. fucntion preparelines ...will be called when i focus at the input
 // when user start typing ...the game starts 
 
 // however when the game starts...we call function of the carent
