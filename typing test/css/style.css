@@ -4,6 +4,7 @@
     box-sizing: border-box;
     /* outline: 1px solid blue; */
     font-family: 'Signika', sans-serif;
+    color: white;
 }
 body{
     display: flex;
@@ -32,21 +33,21 @@ body{
     font-size: 2rem;
     text-align: center;
     color: blue;
+    font-weight: bold;
 }
 .game-container .words-line{
-    height: 130px;
-    width: fit-content;
+    height: 100px;
+    width: 700px;
     padding: 15px 20px;
     font-size: 1.3rem;
     background-color: rgb(29, 29, 29);
     color: white;
     letter-spacing: 1px;
+    display: flex;
+    align-items: center;
 }
 .game-container .words-line .line{
-    white-space: nowrap;
-}
-.game-container .words-line .line:nth-child(1){
-    margin:0px 0px 20px;
+    white-space: wrap;
 }
 .game-container .control{
     display: flex;
@@ -134,8 +135,59 @@ body{
     font-weight: 300;
 }
 .control-container .row button:hover{
-    font-weight: 700;
+    background-color: rgb(29, 29, 29);
 }
 .control-container .buttons button.choosen{
     background-color: rgb(29, 29, 29);
+}
+
+.test p{
+    width: 800px;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.test .letter{
+    /* min-width: 15px; */
+    height: 30px;
+    font-size: 26px;
+    font-weight: bold;
+    /* background-color: red; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* color: white; */
+    border-left: 3px solid transparent;
+    /* animation: opacity 1s linear infinite; */
+}
+.test .letter:nth-child(6){
+    background-color: rgba(170, 170, 170, 0.398);
+    width: 10px;
+}
+.test .letter:nth-child(8){
+    background-color: rgba(170, 170, 170, 0.398);
+}
+@keyframes opacity {
+    0%{
+        border-color: transparent;
+    }
+    50%{
+        border-color: blue;
+    }
+    100%{
+        border-color: transparent;
+    }
+}
+
+.current{
+    background-color: rgba(170, 170, 170, 0.438);
+}
+.false{
+    color: rgba(247, 70, 70, 0.733);
+}
+.true{
+    color: greenyellow;
+}
+.space{
+    width: 16px;
 }

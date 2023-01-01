@@ -10,7 +10,7 @@ export default function preparelines(){
 
     setTimeout(function(){
         // console.log(text)
-        let textBacked = JSON.parse(text)[0].simple.lines
+        let textBacked = JSON.parse(text)[0].simple["lines-withNumber"]
         // console.log(textBacked)
         localStorage.setItem("text", textBacked)
     },100)

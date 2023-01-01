@@ -1,11 +1,12 @@
 [
     {
         "simple":{
-            "lines" :
-                ["Try not to become a man of success but rather try to become a man of value","Success is a lousy teacher. It seduces smart people into thinking they can't lose","A true friend is one who overlooks your failures and tolerates your success","Ambition is the path to success. Persistence is the vehicle you arrive in","Success is where preparation and opportunity meet","Happiness lies in the joy of achievement and the thrill of creative effort","Self-belief and hard work will always earn you success"
-        ]
+            "lines-noNumber" :["Try not to become a man of success but rather try to become a man of value","Success is a lousy teacher. It seduces smart people into thinking they can't lose","A true friend is one who overlooks your failures and tolerates your success","Ambition is the path to success. Persistence is the vehicle you arrive in","Success is where preparation and opportunity meet","Happiness lies in the joy of achievement and the thrill of creative effort","Self-belief and hard work will always earn you success"]
+            ,
+            "lines-withNumber" :["Try not to2 become3 a man4 of success2 but rather 3 try to become a man of value33","Success32 is a lousy teacher34. It3 seduces 23smart people2 into 7thinking they can't lose9","8A true friend is one who87 overlooks9 your8 failures and tolerates your 6success","Ambition is 88the path to success66. Persistence is the 3vehicle you 42arrive in","Success is4 where preparation 2and opportunity9 meet","89Happiness lies in 86the joy of 5achievement and the thrill of creative effort3","1Self-belief 4and 6hard work will 75always earn you 5success09"]
+            
         },
-        "advances":{
+        "advances-noNumber":{
             "lines":
                 ["hello"]
         }
