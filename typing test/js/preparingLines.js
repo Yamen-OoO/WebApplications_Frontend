@@ -9,10 +9,11 @@ export default function preparelines(){
     .then(text1 => text = text1)
 
     setTimeout(function(){
-        // console.log(text)
-        let textBacked = JSON.parse(text)[0].simple["lines-withNumber"]
-        // console.log(textBacked)
+        textBacked = JSON.parse(text)[0].simple["lines-withNumber"]
         localStorage.setItem("text", textBacked)
-    },100)
+    },10)
     return localStorage.getItem("text")
 }
+
+
+// from json to localstroge to my page

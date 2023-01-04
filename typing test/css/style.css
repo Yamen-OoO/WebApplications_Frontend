@@ -181,6 +181,7 @@ body{
 
 .current{
     background-color: rgba(170, 170, 170, 0.438);
+    color: white;
 }
 .false{
     color: rgba(247, 70, 70, 0.733);
