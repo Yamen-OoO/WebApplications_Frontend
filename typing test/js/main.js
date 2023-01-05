@@ -14,35 +14,32 @@ window.onload = function(){
     chooseline()
 }
 function chooseline(){
+    let lines = Array(backedtext)[0].split(",")
     setTimeout(() => {
-        let lines = Array(backedtext)[0].split(",")
+        // console.table(lines)
         // console.log(lines)
         putLine(lines)
     }, 0);
+
+    // timeout so the inputarea.value ="" works inside the put lines method
 }
 
 let index = 0
-let currentNum = 0
 inputAreat.addEventListener("focus", function(e){
     startgame(e)
 })
 inputAreat.addEventListener("keydown",function(e){
     startgame(e)
+    // timer()
 })
 function startgame(e){
-    // console.log(e)
-    console.log(index)
     let lettes = document.querySelectorAll(".container .game-container .words-line .line-one .letters_container span")
-    console.log(lettes.length)
     e.target.onkeydown = function(letter){
-        // console.log(index)
         if(index === lettes.length-1){
             // return alert("done")
             line1.innerHTML = ""
-            inputAreat.value =""
             chooseline()
             index = 0
-            currentNum = 0
             // get new line...put the text inside function ...
             // even when the page reloads ...we call this functioin
         }
@@ -51,12 +48,13 @@ function startgame(e){
             inputAreat.value = ""
             }  
             else if(letter.key ==="Backspace"){
-                console.log(index)
+                // console.log(index)
+                lettes[index].classList.remove("current")
+                lettes[index-1].classList.add("current")
+                lettes[index-1].classList.remove("true")
+                lettes[index-1].classList.remove("false")
                 index--
-                lettes[index+1].classList.remove("current")
-                lettes[index].classList.add("current")
-                lettes[index].classList.remove("true")
-                lettes[index].classList.remove("false")
+                return
                 // lettes[index].style.color = "white"
             }    
             if(letter.key === lettes[index].textContent){
@@ -70,17 +68,22 @@ function startgame(e){
                 lettes[index+1].classList.add("current") 
             }
             index++
-            currentNum++
         }
     } 
+    // console.log(index)
 }
 function putLine(lines){  
     // choose random number here
     let random = Math.floor(Math.random() * lines.length)
     let lineone = lines[random]
+    // console.log(lineone)
+    // console.log(lines.indexOf(lineone))
+    // lines.splice(lines.indexOf(lineone),1)
+    // console.table(lines)
     lettersfun(lineone)
     let lettes = document.querySelectorAll(".container .game-container .words-line .line-one .letters_container span")
     lettes[0].classList.add("current")
+    inputAreat.value =""
     // console.log(lettes[0].textContent)
 }
 
@@ -121,5 +124,112 @@ function lettersfun(lineone){
 
 
 
+// fix when new line comes...empty input
+// fix delete the line from these line that i choose
 
 
+
+
+
+
+let min = document.querySelector(".container .timer div .min")
+let sec = document.querySelector(".container .timer div .sec")
+console.log(min.textContent)
+let test = "9"
+console.log(test)
+console.log(test < "10")
+// false
+console.log(test+1)
+//91 string
+
+
+let test3 = "10"
+console.log(test3+"1")
+
+let test2 = 9
+console.log(9<10)
+//true
+
+function timer(){
+    // let minutes = +min.textContent
+    if(min.textContent !=="0"){
+        min.textContent--
+        sec.textContent ="59"
+    }
+    let minutes = setInterval(function(){
+        if(min.textContent !== "0"){
+            min.textContent--
+        }
+        else{
+            clearInterval(minutes)
+        }
+    },60000)
+    let seconds = setInterval(function(){
+        if(sec.textContent === "0" && min.textContent >"0"){
+            sec.textContent = "60"
+        }
+        if(min.textContent === "0" && sec.textContent === "0"){
+            clearInterval(minutes)
+            clearInterval(seconds)
+            return
+            // end game ...open windo to show the result
+        }
+            // if(sec.textContent <= 10){
+            //     sec.innerHTML ="0"+ sec.textContent
+            //     console.log("hello")
+            // }
+        sec.textContent--
+    },1000)
+    pari
+}
+// timer()
+
+
+testDurationBtns.forEach(function(e,i){
+    e.addEventListener("click",function(){
+        e.classList.add("choosen")
+        testDurationBtns.forEach(function(ele,index){
+            if(index !== i){
+                ele.classList.remove("choosen")
+            }
+        })
+        time.textContent = e.textContent
+    })
+})
+
+wordListBtns.forEach(function(e,i){
+    e.addEventListener("click",function(){
+        e.classList.add("choosen")
+        wordListBtns.forEach(function(ele,index){
+            if(index !== i){
+                ele.classList.remove("choosen")
+            }
+        })
+    })
+})
+TimerBtns.forEach(function(e,i){
+    e.addEventListener("click",function(){
+        if(e.attributes["data-value"].value ==="off"){
+            time.style.display = "none"
+        }
+        else{
+            time.style.display = "block"
+        }
+        e.classList.add("choosen")
+        TimerBtns.forEach(function(ele,index){
+            if(index!== i){
+                ele.classList.remove("choosen")
+            }
+        })
+    })
+})
+numbersBtns.forEach(function(e,i){
+    e.addEventListener("click",function(){
+        e.classList.add("choosen")
+        numbersBtns.forEach(function(ele,index){
+            if(index!==i){
+                ele.classList.remove("choosen")
+            }
+        })
+    })
+})
