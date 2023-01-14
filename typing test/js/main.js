@@ -1,4 +1,5 @@
-import preparelines, { a } from "./preparingLines.js"
+// import preparelines, { a } from "./preparingLines.js"
+import lines from '../lines.json' assert{type:"json"}
 // Componentes
 let testDurationBtns = document.querySelectorAll(".container .control-container .row-timer .buttons button")
 let wordListBtns = document.querySelectorAll(".container .control-container .row-word .buttons button")
@@ -8,24 +9,27 @@ let inputAreat = document.querySelector(".container .control input")
 let time = document.querySelector(".container .game-container .control span.timer")
 let AgainButton = document.querySelector(".container .game-container .control button")
 let line1 = document.querySelector(".container .game-container .words-line .line-one")
-let backedtext 
-window.onload = function(){
-    backedtext = preparelines()
-    chooseline()
-}
+let level 
+let index = 0
+
+
+
+// backedtext = preparelines()
+level = lines[0].simple["lines-noNumber"]
+chooseline()
+// console.log(lines)
+
 function chooseline(){
-    let lines = Array(backedtext)[0].split(",")
-    setTimeout(() => {
-        // console.table(lines)
-        // console.log(lines)
-        putLine(lines)
-    }, 0);
+    inputAreat.value= ""
+    let lines = level    
+    putLine(lines)
+
 
     // timeout so the inputarea.value ="" works inside the put lines method
 }
 
-let index = 0
 inputAreat.addEventListener("focus", function(e){
+    console.log(inputAreat.value)
     startgame(e)
 })
 inputAreat.addEventListener("keydown",function(e){
@@ -34,12 +38,15 @@ inputAreat.addEventListener("keydown",function(e){
 })
 function startgame(e){
     let lettes = document.querySelectorAll(".container .game-container .words-line .line-one .letters_container span")
+    console.log(index)
+    console.log(lettes.length)
     e.target.onkeydown = function(letter){
         if(index === lettes.length-1){
             // return alert("done")
             line1.innerHTML = ""
             chooseline()
             index = 0
+            console.log("done line ")
             // get new line...put the text inside function ...
             // even when the page reloads ...we call this functioin
         }
@@ -69,22 +76,23 @@ function startgame(e){
             }
             index++
         }
+    console.log(inputAreat.value)
+
     } 
     // console.log(index)
 }
 function putLine(lines){  
     // choose random number here
     let random = Math.floor(Math.random() * lines.length)
+    console.table(lines)
     let lineone = lines[random]
-    // console.log(lineone)
-    // console.log(lines.indexOf(lineone))
-    // lines.splice(lines.indexOf(lineone),1)
-    // console.table(lines)
+    lines.splice(random,1)
+    // its removed from the root ...its false this way
+    console.table(lines)
     lettersfun(lineone)
     let lettes = document.querySelectorAll(".container .game-container .words-line .line-one .letters_container span")
     lettes[0].classList.add("current")
     inputAreat.value =""
-    // console.log(lettes[0].textContent)
 }
 
 
@@ -134,20 +142,20 @@ function lettersfun(lineone){
 
 let min = document.querySelector(".container .timer div .min")
 let sec = document.querySelector(".container .timer div .sec")
-console.log(min.textContent)
+// console.log(min.textContent)
 let test = "9"
-console.log(test)
-console.log(test < "10")
+// console.log(test)
+// console.log(test < "10")
 // false
-console.log(test+1)
+// console.log(test+1)
 //91 string
 
 
 let test3 = "10"
-console.log(test3+"1")
+// console.log(test3+"1")
 
 let test2 = 9
-console.log(9<10)
+// console.log(9<10)
 //true
 
 function timer(){

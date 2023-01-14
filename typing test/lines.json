@@ -6,9 +6,9 @@
             "lines-withNumber" :["Try not to2 become3 a man4 of success2 but rather 3 try to become a man of value33","Success32 is a lousy teacher34. It3 seduces 23smart people2 into 7thinking they can't lose9","8A true friend is one who87 overlooks9 your8 failures and tolerates your 6success","Ambition is 88the path to success66. Persistence is the 3vehicle you 42arrive in","Success is4 where preparation 2and opportunity9 meet","89Happiness lies in 86the joy of 5achievement and the thrill of creative effort3","1Self-belief 4and 6hard work will 75always earn you 5success09"]
             
         },
-        "advances-noNumber":{
-            "lines":
-                ["hello"]
+        "advance":{
+            "lines-noNumber":["hello"],
+            "lines-withNumber":["hii"]
         }
         
     }
