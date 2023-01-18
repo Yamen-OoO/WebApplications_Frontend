@@ -1,0 +1,47 @@
+*,*::after , *::before{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: sans-serif;
+    background-color: #aaa;
+}
+.container{
+    border: 1px solid blue;
+    max-width: 900px;
+    margin:100px auto;
+    padding: 20px 10px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+}
+.container .intro-text{
+    max-width: 100%;
+    border: 1px solid rgb(255, 30, 0);
+}
+.container .countdonw-container{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 70px;
+}
+.container .box{
+    width: 150px;
+    height: 150px;
+    border: 1px solid black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+}
+.container .box div{
+    width: 85px;
+    height: 85px;
+    border: 1px solid black;
+    font-size: 2.8rem;
+    line-height:1.8;
+    border-radius: 50%;
+}

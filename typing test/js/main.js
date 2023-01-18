@@ -12,6 +12,12 @@ let line1 = document.querySelector(".container .game-container .words-line .line
 let level 
 let index = 0
 
+wordListBtns[0].addEventListener("click",function(e){
+    // if(e.target.data-value === "simple"){
+        // console.log(true)
+    // }
+    // level = lines[0].simple[a]
+})
 
 
 // backedtext = preparelines()
@@ -43,6 +49,7 @@ function startgame(e){
     e.target.onkeydown = function(letter){
         if(index === lettes.length-1){
             // return alert("done")
+            inputAreat.value = ""
             line1.innerHTML = ""
             chooseline()
             index = 0
@@ -203,6 +210,7 @@ testDurationBtns.forEach(function(e,i){
         })
         time.textContent = e.textContent
     })
+
 })
 
 wordListBtns.forEach(function(e,i){
@@ -240,4 +248,6 @@ numbersBtns.forEach(function(e,i){
             }
         })
     })
+
 })
+
