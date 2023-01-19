@@ -56,14 +56,33 @@ class Calculator{
     }
     getDisplayNUmber(number){
         // add (,) between the numbers
-        const floatNumber = parseFloat(number)
-        if(isNaN(floatNumber)) return ''
-        return floatNumber.toLocaleString("en")
+        const stringNumber = number.toString()
+        // the number before the (.)
+        const integerDigits = parseFloat(stringNumber.split('.')[0])
+        // the number after the (.)
+        const decimalDigits = stringNumber.split('.')[1]
+        let integerDisplay
+        if (isNaN(integerDigits)){
+            integerDisplay = ''
+        }
+        else{
+            integerDisplay = integerDigits.toLocaleString("en", {maximumFractionDigits:0})
+        }
+        if(decimalDigits != null){
+            return `${integerDisplay}.${decimalDigits}`
+        } 
+        else{
+            return integerDisplay
+        }
+
     }
     updateDisplay(){
         this.currentElementText.innerText = this.getDisplayNUmber(this.currentOperand)
         if(this.operation != null){
             this.previousElementText.innerText = `${this.getDisplayNUmber(this.previousOperand)} ${this.operation}`
+        }
+        else{
+            this.previousElementText.innerText = ''
         }
     }
 }
