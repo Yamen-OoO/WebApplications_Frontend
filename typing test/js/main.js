@@ -1,8 +1,10 @@
 // import preparelines, { a } from "./preparingLines.js"
 import lines from '../lines.json' assert{type:"json"}
+
 // Componentes
 let testDurationBtns = document.querySelectorAll(".container .control-container .row-timer .buttons button")
 let wordListBtns = document.querySelectorAll(".container .control-container .row-word .buttons button")
+console.log(wordListBtns[0])
 let numbersBtns = document.querySelectorAll(".container .control-container .row-number .buttons button")
 let TimerBtns = document.querySelectorAll(".container .control-container .row-showTimer .buttons button")
 let inputAreat = document.querySelector(".container .control input")
@@ -12,21 +14,24 @@ let line1 = document.querySelector(".container .game-container .words-line .line
 let level 
 let index = 0
 
-wordListBtns[0].addEventListener("click",function(e){
-    // if(e.target.data-value === "simple"){
-        // console.log(true)
-    // }
-    // level = lines[0].simple[a]
-})
 
-
+// wordListBtns[0].onclick = function(){
+//     level = lines[0].simple[]
+//     chooseline()
+// }
+// wordListBtns[0].onclick = function(){
+//     level = lines[0].advance[]
+//     chooseline()
+// }
+// numbersBtns[0].onclick = function(){
+//     number
+// }
 // backedtext = preparelines()
 level = lines[0].simple["lines-noNumber"]
 chooseline()
 // console.log(lines)
 
 function chooseline(){
-    inputAreat.value= ""
     let lines = level    
     putLine(lines)
 
@@ -62,6 +67,9 @@ function startgame(e){
             inputAreat.value = ""
             }  
             else if(letter.key ==="Backspace"){
+                if(index === 0){
+                    return
+                }
                 // console.log(index)
                 lettes[index].classList.remove("current")
                 lettes[index-1].classList.add("current")
@@ -83,7 +91,7 @@ function startgame(e){
             }
             index++
         }
-    console.log(inputAreat.value)
+    // console.log(inputAreat.value)
 
     } 
     // console.log(index)

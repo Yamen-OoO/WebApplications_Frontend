@@ -59,7 +59,7 @@ let counter = setInterval(()=>{
     // console.log(days)
 
 
-    // take the fraction of timeleft then convert it to hours
+    // take the fraction of timeleft (timeLeft % (1000 * 60 * 60 * 24 )) then convert it to hours
     let hoursTime = Math.floor((timeLeft % (1000 * 60 * 60 * 24 )) / (1000 * 60 * 60))
     hours.textContent = hoursTime
     // console.log(hours)
