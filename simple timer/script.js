@@ -37,11 +37,11 @@
 
 
 
-let days = document.querySelector(".container .countdonw-container .days [data-set = day]")
-let hours = document.querySelector(".container .countdonw-container .hours [data-set = hour]")
-let minutes = document.querySelector(".container .countdonw-container .mins [data-set = minute]")
-let seconds = document.querySelector(".container .countdonw-container .secs [data-set = second]")
-let countDown = new Date("feb 1 ,2023 , 00:00:00").getTime()
+let days = document.querySelector(".timer-container .countdonw-container .days [data-set = day]")
+let hours = document.querySelector(".timer-container .countdonw-container .hours [data-set = hour]")
+let minutes = document.querySelector(".timer-container .countdonw-container .mins [data-set = minute]")
+let seconds = document.querySelector(".timer-container .countdonw-container .secs [data-set = second]")
+let countDown = new Date("june 1 ,2023 , 00:00:00").getTime()
 // it is static number ... returns the millseconds until this date from year 1970
 // console.log(countDown / 1000 / 60 /60 /24 / 365) // 53 years
 
