@@ -35,3 +35,13 @@ pcbtn.onclick = function(){
     // put the elements inside the container
     imgs = choosenarray
 }
+
+
+let array1 = [1,2,3,4,5]
+let array2 = []
+array2.push(array1[1])
+array2.push(array1[2])
+console.log(array1)
+console.log(array2)
+
+// imgscon.innerHTML = ''
