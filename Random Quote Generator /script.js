@@ -1,6 +1,7 @@
 let btn = document.querySelector("button")
 let text = document.querySelector("p")
 let author = document.querySelector("h3")
+let text1
 window.addEventListener("load",GetQutoe())
 
 btn.onclick = function(){
@@ -15,6 +16,7 @@ function GetQutoe(){
     .then(function(data) {
     // console.log(data[Math.floor(data.length * Math.random())]);
     PutData(data[Math.floor(data.length * Math.random())])
+    text1 = data[0]
     });
 }
 function PutData(data){
