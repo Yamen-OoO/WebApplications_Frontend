@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="control">
+            <div class="ranges">
+                <label for="blur">Blur</label>
+                <input id="blur" type="range" min="0" max="5" step="0.1" value="0">
+                <label for="contrast">Contrast</label>
+                <input  id="contrast" type="range" min="0" max="5" step="0.1" value="0">
+                <label for="hue-rotate">Hue-Rotate</label>
+                <input  id="hue-rotate" type="range" min="0" max="200" value="100">
+                <label for="sepia">Sepia</label>
+                <input  id="sepia" type="range" min="0" max="360"  value="0">
+            </div>
+            <div class="buttons">
+                <div class="flip-option">
+                    <input type="radio" name="filp" id="no-flip" checked>
+                    <label for="no-flip">No Flip</label>
+                </div>
+                <div class="flip-option">
+                    <input type="radio" name="filp" id="flip-x" >
+                    <label for="flip-x">Flip Horzintal</label>
+                </div>
+                <div class="flip-option">
+                    <input type="radio" name="filp" id="flip-y">
+                    <label for="flip-y">Flip Vertical</label>
+                </div>
+            </div>
+
+        </div>
+        <div class="img">
+            <div class="img-container"></div>
+            <input type="file">
+        </div>
+    </div>
+</body>
+<script src="scirpt.js"></script>
+</html>

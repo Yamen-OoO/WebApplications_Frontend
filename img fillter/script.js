@@ -7,10 +7,6 @@ const all = document.querySelectorAll(".container .nav-buttons button")[0]
 const pcbtn = document.querySelector(".container .nav-buttons button[data-filter='pc']")
 const phonebtn = document.querySelector(".container .nav-buttons button[data-filter='phone']")
 const ipadbtn = document.querySelector(".container .nav-buttons button[data-filter='ipad']")
-console.log(all)
-console.log(pcbtn)
-console.log(phonebtn)
-console.log(ipadbtn)
 
 let state = {
     sotrtby:"",
@@ -18,30 +14,46 @@ let state = {
 }
 
 
-all.onclick = function(){
-    choosenarray = []
-    imgs.forEach(element => {
-        choosenarray.push(element)
-    });
-    imgs = choosenarray
-}
-pcbtn.onclick = function(){
-    choosenarray = []
-    imgs.forEach(element => {
-        if(element.getAttribute("data-type")=== "phones"){
-            choosenarray.push(element)
-        }
-    });
-    // put the elements inside the container
-    imgs = choosenarray
-}
+document.addEventListener("click",e=>{
+    if(e.target.tagName === "button".toUpperCase() && e.target.getAttribute("data-filter") !== "All"){
+        // e.target.className = "active"
+        imgscon.innerHTML = ''
+        choosenarray = []
+        state.sotrtby = e.target.textContent
+        // console.log(state)
+        imgs.forEach(function(e){
+            if(e.getAttribute("data-type") === state.sotrtby){
+                choosenarray.push(e)
+            }
+        })
+        // console.log(choosenarray)
+        // console.log(imgs)
+        imgscon.innerHTML = ''
+        choosenarray.forEach(function(e){
+            e.classList.add("animate__fadeInLeft")
+            // document.imgscon.appendChild(e)
+            imgscon.appendChild(e)
+        })
+    }
+    else if(e.target.getAttribute("data-filter") === "All"){
+        imgscon.innerHTML = ''
+        choosenarray = []
+        imgs.forEach(function(e){
+            e.classList.add("animate__fadeInLeft")
+            imgscon.appendChild(e)
+        })
+    }
+})
 
 
-let array1 = [1,2,3,4,5]
-let array2 = []
-array2.push(array1[1])
-array2.push(array1[2])
-console.log(array1)
-console.log(array2)
+
+
+
+// let array1 = [1,2,3,4,5]
+// let array2 = []
+// array2.push(array1[1])
+// array2.push(array1[2])
+// console.log(array1)
+// console.log(array2)
 
 // imgscon.innerHTML = ''
