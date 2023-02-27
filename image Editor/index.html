@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
+    <div class="wrapper">
         <div class="control">
             <div class="ranges">
                 <label for="blur">Blur</label>
@@ -36,9 +36,12 @@
             </div>
 
         </div>
-        <div class="img">
-            <div class="img-container"></div>
-            <input type="file">
+        <div class="result">
+            <figure class="img-container">
+                <img src="" alt="" id="chosen-img">
+            </figure>
+            <input type="file" id="uplode-button" accept="Image/*">
+            <label for="upload-button">Choose An Image</label>
         </div>
     </div>
 </body>
