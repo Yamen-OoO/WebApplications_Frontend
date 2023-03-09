@@ -1,11 +1,15 @@
 import data from './data.json'  assert { type: "json" };
 console.log(data)
 
+var backAudio = new Audio('/backMusic.mp3');
+var correctAudio = new Audio('/Correct Answer Sound Effect.mp3');
+
 
 let levels = document.querySelectorAll(".game-levels-container .levels button")
 
 let LEVEL
 let cardsArray = []
+let trueChoices = 0
 
 
 levels.forEach((lvl) => {
@@ -13,6 +17,7 @@ levels.forEach((lvl) => {
         LEVEL = lvl.target.dataset.lvl
         console.log(LEVEL)
         document.querySelector(".game-levels-container").style.display = "none"
+        backAudio.play();
         MakeGame()
     }
 })
@@ -23,6 +28,7 @@ levels.forEach((lvl) => {
 function MakeGame() {
     if (LEVEL === "16") {
         EasyLevel(4)
+
     }
     else if (LEVEL === "20") {
         EasyLevel(2)
@@ -38,21 +44,23 @@ function MakeGame() {
 function EasyLevel(number) {
     data.length = data.length - number
     console.log(data.length)
+    trueChoices = data.length
     MackCards()
     ClickCard()
+    
 
 }
 
 
-    function MackCards() {
+function MackCards() {
     data.map((card) => {
         Card(card)
     })
     console.log(cardsArray)
-    cardsArray.forEach((card)=>{
+    cardsArray.forEach((card) => {
         document.querySelector(".cards").appendChild(card)
     })
-    
+
 }
 
 function Card(card) {
@@ -60,7 +68,7 @@ function Card(card) {
     for (let i = 0; i <= 1; i++) {
         let Card = document.createElement('div')
         Card.className = "flip-card"
-        Card.setAttribute("data-languageName",card.languageName)
+        Card.setAttribute("data-languageName", card.languageName)
 
         let innderCard = document.createElement("div")
         innderCard.className = "flip-card-inner"
@@ -71,68 +79,104 @@ function Card(card) {
         let BackImg = document.createElement("img")
         BackImg.src = card.cardImg
 
-        
+
         let flipCardBack = document.createElement("div")
         flipCardBack.className = "flip-card-back"
 
 
         let FrontImg = document.createElement("img")
         FrontImg.className = "front-img"
-        FrontImg.src="https://imgs.search.brave.com/LzKqNHZWtpMuoamDm5eqZscJS7oLDOjFE_Nr5jx-7Dc/rs:fit:512:512:1/g:ce/aHR0cHM6Ly9jZG4w/Lmljb25maW5kZXIu/Y29tL2RhdGEvaWNv/bnMvY29tcHV0ZXIt/NzEvNjQvY29kaW5n/LXByb2dyYW1tZXIt/Y29kZS1wcm9ncmFt/bWluZy1sYW5ndWFn/ZS01MTIucG5n"
+        FrontImg.src = '/imgs/quetionmark.png'
 
         flipCardBack.appendChild(BackImg)
         flipCardFront.appendChild(FrontImg)
 
+        let doneLayer = document.createElement("div")
+        // let trueimg = document.createElement("img")
+        // trueimg.src="https://banner2.kisspng.com/20180601/opx/kisspng-check-mark-clip-art-true-sign-5b115b415d4340.346610361527864129382.jpg"
+        // doneLayer.appendChild(trueimg)
+        
         innderCard.appendChild(flipCardBack)
         innderCard.appendChild(flipCardFront)
         Card.append(innderCard)
+        Card.appendChild(doneLayer)
         cardsArray.push(Card)
     }
 
 }
 
 
-function ClickCard(){
+function ClickCard() {
     let cards = document.querySelectorAll(".cards .flip-card")
-    let openCards ={
-        opendCards:0,
-        card1Name :"",
-        card2Name :"",
-        cardsNumver:[]
+    let openCards = {
+        opendCards: 0,
+        card1Name: "",
+        card2Name: "",
+        cardsNumver: []
     }
-    cards.forEach((card)=>{
-        card.onclick = function(){
-            if(!card.firstChild.classList.contains("open") && openCards.opendCards !== 2){
-                card.firstChild.classList.add("open") 
+    cards.forEach((card) => {
+        card.onclick = function () {
+            if (!card.firstChild.classList.contains("open") && openCards.opendCards !== 2) {
+                card.firstChild.classList.add("open")
                 openCards.cardsNumver.push(card)
                 let one = Object.keys(openCards)[openCards.opendCards + 1]
                 openCards[one] = card.dataset.languagename
                 openCards.opendCards++
                 console.log(openCards)
-                if(openCards.opendCards === 2){
-                    CompareCards([openCards.cardsNumver,openCards.card1Name , openCards.card2Name])
+                if (openCards.opendCards === 2) {
+                    CompareCards([openCards.cardsNumver, openCards.card1Name, openCards.card2Name])
                     openCards.opendCards = 0
                     openCards.cardsNumver = []
+                    checkCardSLeft()
                 }
             }
-            else{
+            else {
                 console.log('noo')
             }
         }
     })
 }
 
-function CompareCards(ThetowCards){
+function CompareCards(ThetowCards) {
     console.log(ThetowCards[2])
-    if(ThetowCards[1] === ThetowCards[2]){
+
+    // true
+    if (ThetowCards[1] === ThetowCards[2]) {
+        setTimeout(function () {
+            ThetowCards[0][0].lastChild.classList.add("done-card")
+            ThetowCards[0][1].lastChild.classList.add("done-card")
+            correctAudio.play()
+        }, 1000)
+        trueChoices--
         console.log("smaee")
         return true
     }
-    else{
-        setTimeout(function(){
-            console.log(ThetowCards[0][0].firstChild.classList.remove("open"))
-            console.log(ThetowCards[0][1].firstChild.classList.remove("open"))
-        },1000)
+    // false
+    else {
+        setTimeout(function () {
+            ThetowCards[0][0].firstChild.classList.add("open")
+            ThetowCards[0][1].firstChild.classList.add("open")
+        }, 500)
+        setTimeout(function () {
+            ThetowCards[0][0].classList.add("shake-card")
+            ThetowCards[0][1].classList.add("shake-card")
+        }, 1000)
+        setTimeout(function () {
+            ThetowCards[0][0].firstChild.classList.remove("open")
+            ThetowCards[0][1].firstChild.classList.remove("open")
+
+            ThetowCards[0][0].classList.remove("shake-card")
+            ThetowCards[0][1].classList.remove("shake-card")
+        }, 1500)
     }
 
+}
+
+function checkCardSLeft(){
+    if(trueChoices === 0){
+        setTimeout(()=>{
+            alert("you win ...end this game")
+            window.location.reload()
+        },2000)
+    }
 }

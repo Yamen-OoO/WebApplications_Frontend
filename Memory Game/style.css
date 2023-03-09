@@ -5,29 +5,40 @@
 }
 body{
     height: 100vh;
-    background-color: rgb(183, 183, 224);
-    /* overflow: hidden; */
+    overflow: hidden;
+    justify-content: space-between;
+    display: flex;
+    background-image: url(./imgs/backgound.jpg);
+    background-size: cover;
+    /* background: linear-gradient(rgb(76, 76, 248),blue ,rgb(124, 124, 246)); */
     /* padding: 20px; */
+    font-family: Arial, Helvetica, sans-serif;
 }
 .game-container{
+    max-width: 600px;
+
     max-width: 700px;
-    background-color: orange;
+    
+    max-width: 700px;
+    background-color: rgba(56, 55, 55, 0.526);
     width: 100%;
-    border: 1px solid black;
+    background-color: rgba(0, 0, 0, 0.7);
     margin: 0px auto;
     display: flex;
     align-items: center;
+    flex-direction: column;
     justify-content: center;
     padding: 0px 20px;
+    order: 11;
 }
 .cards{
     max-width: 100%;
-    border: 1px solid blue;
+    /* border: 1px solid blue; */
     padding: 10px;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 7px;
+    gap:10px;
     /* background-color: rgb(77, 72, 63); */
 }
 .card{
@@ -47,17 +58,18 @@ body{
 
 
 .control-container{
-    position: absolute;
-    top: 10px;
-    left: 10px;
+    /* border: 1px solid orange; */
     width: 300px;
-    border: 1px solid blue;
+    padding: 20px;
     display: flex;
+    flex-direction: column;
     gap: 10px;
+    order: 1;
+    /* background-color: rgba(0, 0, 0, 0.7); */
 }
 .control-container div{
-    flex: 1;
-    background-color: red;
+    height: 40px;
+    background-color: white;
     text-align: center;
 }
 
@@ -113,12 +125,20 @@ body{
 
 .flip-card {
     background-color: transparent;
-    width: 125px;
-    height: 150px;
-    border: 1px solid #f1f1f1;
-    perspective: 1000px;
+    width: 100px;
+    height: 120px;
+
+    width: 100px;
+    height: 120px;
+ 
+    width: 90px;
+    height: 110px; 
+
+
+    perspective: 1000;
     cursor: pointer;
-    background-color:palegoldenrod;
+    border-radius: 5px;
+    position: relative;
     /* Remove this if you don't want the 3D effect */
 }
 
@@ -130,6 +150,8 @@ body{
     text-align: center;
     transition: transform 0.8s;
     transform-style: preserve-3d;
+    background-color:white;
+    border: 2px solid #f64a0c;
 }
 
 /* Do an horizontal flip when you move the mouse over the flip box container */
@@ -151,21 +173,75 @@ body{
 /* Style the front side (fallback if image is missing) */
 .flip-card-front {
     color: black;
+    /* background-color: rgb(247, 91, 56); */
+    line-height: 11;
 }
 .flip-card-front .front-img{
-    width: 100%;
-    height: 100%;
+    width: 70%;
+    height: 70%;
 }
 
 /* Style the back side */
 .flip-card-back {
     color: white;
     transform: rotateY(180deg);
-    line-height: 16;
+    line-height: 13;
 }
 .open{
     transform: rotateY(180deg);
 }
 .close{
     transform: rotateY(0);
+}
+.shake-card{
+    animation: shake .9s linear;
+}
+@keyframes shake {
+    0%{
+        transform: rotateZ(5deg);
+    }
+    20%{
+        transform: rotateZ(-5deg);
+    }
+    40%{
+        transform: rotateZ(5deg);
+    }
+    60%{
+        transform: rotateZ(-5deg);
+    }
+    80%{
+        transform: rotateZ(5deg);
+    }
+    100%{
+        transform: rotateZ(0deg);
+    }
+}
+
+
+.done-card{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(5, 217, 51, 0.527);
+    animation: done-card .5s ;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.done-card img{
+    width: 50%;
+    height: 40%;
+    background-color: rgba(11, 155, 42, 0.655);
+    animation: done-card .5s linear;
+}
+@keyframes done-card {
+    0%{
+        transform: scale(1.3);
+    }
+    100%{
+        transform: scale(1);
+    }
 }
