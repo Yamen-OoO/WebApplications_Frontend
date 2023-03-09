@@ -1,0 +1,63 @@
+[
+    {
+        "id": "1",
+        "cardImg": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg",
+        "languageName":"css3"
+    },
+    {
+        "id": "2",
+        "cardImg": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg",
+        "languageName":"c++"
+
+    },
+    {
+        "id": "3",
+        "cardImg": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg",
+        "languageName":"html5"
+    },
+    {
+        "id": "4",
+        "cardImg": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kotlin/kotlin-original.svg",
+        "languageName":"kotlin"
+    },
+    {
+        "id": "5",
+        "cardImg": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg",
+        "languageName":"python"
+    },
+    {
+        "id": "6",
+        "cardImg": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg",
+        "languageName":"js"
+    },
+    {
+        "id": "7",
+        "cardImg": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg",
+        "languageName":"php"
+    },
+    {
+        "id": "8",
+        "cardImg": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg",
+        "languageName":"react"
+    },
+    {
+        "id": "9",
+        "cardImg": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg",
+        "languageName":"postgress"
+    },  
+    {
+        "id": "10",
+        "cardImg": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/electron/electron-original.svg",
+        "languageName":"electron"
+    },
+    {
+        "id": "11",
+        "cardImg": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/dotnetcore/dotnetcore-original.svg",
+        "languageName":".net"
+    },
+    {
+        "id": "12",
+        "cardImg": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/ruby/ruby-original.svg",
+        "languageName":"ruby"
+    }
+]

@@ -1,0 +1,171 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    height: 100vh;
+    background-color: rgb(183, 183, 224);
+    /* overflow: hidden; */
+    /* padding: 20px; */
+}
+.game-container{
+    max-width: 700px;
+    background-color: orange;
+    width: 100%;
+    border: 1px solid black;
+    margin: 0px auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0px 20px;
+}
+.cards{
+    max-width: 100%;
+    border: 1px solid blue;
+    padding: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 7px;
+    /* background-color: rgb(77, 72, 63); */
+}
+.card{
+    /* easy */
+    width: 125px;
+    
+    /* medium */
+    /* width: 110px; */
+
+    /* medium */
+    /* width: 90px; */
+
+    
+    height: 150px;
+    border: 1px solid red;
+}
+
+
+.control-container{
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: 300px;
+    border: 1px solid blue;
+    display: flex;
+    gap: 10px;
+}
+.control-container div{
+    flex: 1;
+    background-color: red;
+    text-align: center;
+}
+
+
+
+.game-levels-container{
+    width: 100%;
+    height: 100%;
+    border: 1px solid black;
+    position: absolute;
+    top: 0;
+    z-index: 11;
+    background-color: rgba(255, 255, 255, 0.591);
+    /* display: none; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.game-levels-control{
+    padding: 10px;
+    max-width: 400px;
+    height: 300px;
+    width: 100%;
+    border: 1px solid blue;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    background-color: blue;
+}
+.game-levels-control .levels button{
+    display: block;
+    width: 200px;
+    height: 30px;
+    margin-bottom: 20px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+.small-card{}
+.medium-card{}
+.big-card{}
+
+.flip-card {
+    background-color: transparent;
+    width: 125px;
+    height: 150px;
+    border: 1px solid #f1f1f1;
+    perspective: 1000px;
+    cursor: pointer;
+    background-color:palegoldenrod;
+    /* Remove this if you don't want the 3D effect */
+}
+
+/* This container is needed to position the front and back side */
+.flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+}
+
+/* Do an horizontal flip when you move the mouse over the flip box container */
+/* .flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+} */
+
+/* Position the front and back side */
+.flip-card-front,
+.flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    /* Safari */
+    backface-visibility: hidden;
+}
+
+/* Style the front side (fallback if image is missing) */
+.flip-card-front {
+    color: black;
+}
+.flip-card-front .front-img{
+    width: 100%;
+    height: 100%;
+}
+
+/* Style the back side */
+.flip-card-back {
+    color: white;
+    transform: rotateY(180deg);
+    line-height: 16;
+}
+.open{
+    transform: rotateY(180deg);
+}
+.close{
+    transform: rotateY(0);
+}
