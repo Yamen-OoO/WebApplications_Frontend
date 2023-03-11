@@ -68,7 +68,7 @@ body{
     /* background-color: rgba(0, 0, 0, 0.7); */
 }
 .control-container div{
-    height: 40px;
+    /* height: 40px; */
     background-color: white;
     text-align: center;
 }
@@ -194,6 +194,9 @@ body{
 .close{
     transform: rotateY(0);
 }
+.noclick{
+    pointer-events: none;
+}
 .shake-card{
     animation: shake .9s linear;
 }
@@ -232,12 +235,6 @@ body{
     justify-content: center;
 }
 
-.done-card img{
-    width: 50%;
-    height: 40%;
-    background-color: rgba(11, 155, 42, 0.655);
-    animation: done-card .5s linear;
-}
 @keyframes done-card {
     0%{
         transform: scale(1.3);

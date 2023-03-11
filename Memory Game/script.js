@@ -1,5 +1,5 @@
 import data from './data.json'  assert { type: "json" };
-console.log(data)
+// console.log(data)
 
 var backAudio = new Audio('/backMusic.mp3');
 var correctAudio = new Audio('/Correct Answer Sound Effect.mp3');
@@ -15,7 +15,7 @@ let trueChoices = 0
 levels.forEach((lvl) => {
     lvl.onclick = (lvl) => {
         LEVEL = lvl.target.dataset.lvl
-        console.log(LEVEL)
+        // console.log(LEVEL)
         document.querySelector(".game-levels-container").style.display = "none"
         backAudio.play();
         MakeGame()
@@ -24,6 +24,38 @@ levels.forEach((lvl) => {
 
 
 
+function showCards(){
+    setTimeout(()=>{
+        // let cardsContainer = document.querySelector(".game-container .cards")
+        // cardsContainer.style.curor = "pointer"
+        let cardsContainer = document.querySelector(".game-container .cards")
+        let cards =document.querySelectorAll(".game-container .cards .flip-card .flip-card-inner")
+        cards.forEach((card)=>{
+            card.classList.add("open")
+        })
+        CloseCards()
+    },1000)
+}
+
+function CloseCards(){
+    setTimeout(() => {
+        let cardsContainer = document.querySelector(".game-container .cards")
+        let cards =document.querySelectorAll(".game-container .cards .flip-card .flip-card-inner")
+        cards.forEach((card)=>{
+            card.classList.remove("open")
+            cardsContainer.classList.remove("noclick")
+        })
+    }, 4000);
+}
+// showCards()
+
+function StopClick(){
+    let cardsContainer = document.querySelector(".game-container .cards")
+    cardsContainer.classList.add("noclick")
+    setTimeout(()=>{
+        cardsContainer.classList.remove("noclick")
+    },1300)
+}
 
 function MakeGame() {
     if (LEVEL === "16") {
@@ -43,7 +75,7 @@ function MakeGame() {
 
 function EasyLevel(number) {
     data.length = data.length - number
-    console.log(data.length)
+    // console.log(data.length)
     trueChoices = data.length
     MackCards()
     ClickCard()
@@ -53,13 +85,19 @@ function EasyLevel(number) {
 
 
 function MackCards() {
+    // Make the cards
     data.map((card) => {
         Card(card)
     })
-    console.log(cardsArray)
+    // console.log(cardsArray)
+
+    // put cards in the array
     cardsArray.forEach((card) => {
         document.querySelector(".cards").appendChild(card)
     })
+    let cardsContainer = document.querySelector(".game-container .cards")
+    cardsContainer.classList.add("noclick")
+    showCards()
 
 }
 
@@ -69,13 +107,14 @@ function Card(card) {
         let Card = document.createElement('div')
         Card.className = "flip-card"
         Card.setAttribute("data-languageName", card.languageName)
-
+        
         let innderCard = document.createElement("div")
         innderCard.className = "flip-card-inner"
-
+        // innderCard.classList.add("open")
+        
         let flipCardFront = document.createElement("div")
         flipCardFront.className = "flip-card-front"
-
+        
         let BackImg = document.createElement("img")
         BackImg.src = card.cardImg
 
@@ -116,13 +155,14 @@ function ClickCard() {
     }
     cards.forEach((card) => {
         card.onclick = function () {
+            // console.log("clicked")
             if (!card.firstChild.classList.contains("open") && openCards.opendCards !== 2) {
                 card.firstChild.classList.add("open")
                 openCards.cardsNumver.push(card)
                 let one = Object.keys(openCards)[openCards.opendCards + 1]
                 openCards[one] = card.dataset.languagename
                 openCards.opendCards++
-                console.log(openCards)
+                // console.log(openCards)
                 if (openCards.opendCards === 2) {
                     CompareCards([openCards.cardsNumver, openCards.card1Name, openCards.card2Name])
                     openCards.opendCards = 0
@@ -131,7 +171,7 @@ function ClickCard() {
                 }
             }
             else {
-                console.log('noo')
+                // console.log('noo')
             }
         }
     })
@@ -148,8 +188,8 @@ function CompareCards(ThetowCards) {
             correctAudio.play()
         }, 1000)
         trueChoices--
-        console.log("smaee")
-        return true
+        // console.log("smaee")
+        // return true
     }
     // false
     else {
@@ -169,6 +209,8 @@ function CompareCards(ThetowCards) {
             ThetowCards[0][1].classList.remove("shake-card")
         }, 1500)
     }
+    StopClick()
+
 
 }
 
@@ -180,3 +222,28 @@ function checkCardSLeft(){
         },2000)
     }
 }
+
+
+
+// show text functions
+let text = "Hello user in memory game .... rules are simple : 1) choose your level ... keep in you mind the cards ...to guess the cards when they closed"
+
+let textArray = text.split("")
+
+console.log(textArray)
+
+let textcontainer = document.querySelector(".deatails-text-show p")
+
+function AddLetters(){
+    let i = 0
+    setInterval(()=>{
+        if(i < textArray.length){
+            console.log(textArray[i])
+            textcontainer.textContent = textcontainer.textContent + textArray[i]
+        }
+        i++
+    },100)
+
+}
+
+AddLetters()
