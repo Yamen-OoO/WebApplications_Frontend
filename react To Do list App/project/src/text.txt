@@ -1,0 +1,4 @@
+ctrl space to import the componets if it is not suggested
+
+
+to toggle between pages ctrl pageUp or pageDown
