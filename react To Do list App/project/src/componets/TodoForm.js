@@ -5,8 +5,15 @@ import { useState } from 'react'
 export default function TodoForm(props) {
     const handlesubmit = e =>{
         e.preventDefault()
+        
+        props.onSubmit({
+            id: Math.floor(Math.random() * 1000) ,
+            text : input
+        });
         setInput("")
     }
+
+
     const handleChange = e =>{
         setInput(e.target.value)
         
