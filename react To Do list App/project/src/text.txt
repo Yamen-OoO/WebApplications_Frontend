@@ -2,3 +2,69 @@ ctrl space to import the componets if it is not suggested
 
 
 to toggle between pages ctrl pageUp or pageDown
+
+
+... first bulid the ui of the application ...and think of the data you want to set it 
+to perform on it .... then the ui will react automatically to this data
+
+
+
+
+
+========================== 
+you can pass the setState function the changes a value of a data variable to 
+child component using props  ...... and then use this function to set the father 
+data variable .... and then you can use this variable to another child
+
+when i use the funciton within the child
+for ex  
+
+const childe = (props) =>{
+    const inputonchege() =>{
+        .....
+        props.fatherfunction(//)
+    }
+    return(
+        ....
+    )
+}
+
+
+or without the props keyword
+
+
+
+const childe = ({fatherfunction}) =>{
+    const inputonchege() =>{
+        .....
+        fatherfunction(//)
+    }
+    return(
+        ....
+    )
+}
+
+fatherfunction ... is the function that changes the state
+=========================================================================
+to see the states and the props of a comp .... use the react dev tools extension
+===========================================================================
+in vanilla js ...we write the text .. ..then we submit.... we create a div 
+we cerate p ...and the other stuff
+grab the text value and pass to P
+add the classes ... then render to the screen
+
+
+in react we writhe the text
+take the data ... then make some jsx code ... that automaticallly render it out
+
+
+
+==================================================================
+remember when we submit ... we prevent to refresh the page
+when we submit ... we called setTodos setstate ... to make an object and add it 
+to the array
+...todos ===> it means if i had todos in the array ....sperad them in here
+
+
+to reset the value of the input ... we set the value of the input is same of inputtext state
+so to empty it then ui check the state and update it
