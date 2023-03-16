@@ -68,3 +68,10 @@ to the array
 
 to reset the value of the input ... we set the value of the input is same of inputtext state
 so to empty it then ui check the state and update it
+
+
+
+
+======================================================================
+we add an key ... so if we delete an item ...react knows how to react to this and knows which item to be deleted
+and render only the naccery item to be rendered

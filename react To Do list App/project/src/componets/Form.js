@@ -3,6 +3,7 @@ import { useState } from 'react'
 
 
 export default function Form({inputText , todos , setInputText , setTodos}) {
+
     const inputTextHandler = (e) =>{
         setInputText(e.target.value)
     }
@@ -36,3 +37,41 @@ export default function Form({inputText , todos , setInputText , setTodos}) {
         </form>
     )
 }
+
+
+// let array = [1,2,3,4]
+// console.log( [...array , 99])
+
+
+
+// function test(...numbers){
+//     console.log(numbers)
+//     for( const num of numbers){
+//         console.log(num)
+//     }
+// }
+// test(1)
+// test(1,2,3,5,777)
+// test(1,6,7,8,9,3,6)
+
+
+
+
+// let obj = {
+//     name:'yamen',
+//     age:22,
+//     level:3
+// }
+// console.log({...obj ,name:"ahmed"})
+
+
+
+
+// let array = [1,2,3,4,5]
+// let filltered  = array.filter((e)=> e >=3)
+// console.log(array)
+
+// console.log(filltered)
+
+
+
