@@ -2,7 +2,7 @@ import React from 'react'
 import { useState } from 'react'
 
 
-export default function Form({inputText , todos , setInputText , setTodos}) {
+export default function Form({inputText , todos , setInputText , setTodos , setStatus}) {
 
     const inputTextHandler = (e) =>{
         setInputText(e.target.value)
@@ -19,6 +19,9 @@ export default function Form({inputText , todos , setInputText , setTodos}) {
         // set the textstate to ''
         setInputText("")
     }
+    const statusHandler = (e)=>{
+        setStatus(e.target.value)
+    }
 
     return (
         <form>
@@ -28,7 +31,7 @@ export default function Form({inputText , todos , setInputText , setTodos}) {
             </button>
 
             <div className='select'>
-                <select name='todos' className='filter-todo'>
+                <select onChange={statusHandler} name='todos' className='filter-todo'>
                     <option value="all">All</option>
                     <option value="Completed">Completed</option>
                     <option value="Uncompleted">UnCompleted</option>

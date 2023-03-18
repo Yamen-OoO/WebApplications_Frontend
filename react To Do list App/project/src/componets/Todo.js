@@ -4,6 +4,7 @@ function Todo({setTodos , todos , todo}) {
 
     const deleteHandler = () =>{
         console.log(todos)
+        // remove the todo taht it is not equal to any of todos id
         setTodos(todos.filter((e) => e.id !== todo.id))
         // console.log(todo.id)
     }
