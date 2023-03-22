@@ -1,0 +1,7 @@
+this application we used TMDB api ... to get our movies...also when we use our api key to generates our api url
+
+we used async and await ... if we want to get data from external api ... so we dont have the data availabe for us instsally
+it denpend on the internet connection
+
+
+be carefull when you want to return anything ... ()=> () //////   not ()=> {}
