@@ -1,10 +1,13 @@
-*,*::after , *::before{
+*,
+*::after,
+*::before {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
     /* outline: 1px solid orange; */
 }
-body{
+
+body {
     font-family: sans-serif;
     background-color: #aaa;
     background-image: url(/imgs/videoblocks-plexus-abstract-network-business-technology-science-background-loop_bj-cr7db7_thumbnail-1080_01.png);
@@ -14,29 +17,33 @@ body{
     color: white;
     position: relative;
 }
-.black-layer{
+
+.black-layer {
     height: 100vh;
     max-width: 100vw;
     background-color: rgba(0, 0, 0, 0.014);
     position: absolute;
     left: 0;
     top: 0;
-    z-index:-1;
+    z-index: -1;
 }
-.timer-container{
+
+.timer-container {
     /* border: 1px solid blue; */
     max-width: 900px;
-    margin:0px auto;
+    margin: 0px auto;
     min-height: 100vh;
     padding: 20px 10px;
     text-align: center;
     display: flex;
     flex-direction: column;
+    justify-content: center;
     gap: 16px;
     position: relative;
     padding: 20px 0 50px;
 }
-.logo{
+
+.logo {
     width: 190px;
     height: 190px;
     background-image: url(/imgs/logo2.png);
@@ -45,25 +52,30 @@ body{
     background-repeat: no-repeat;
     margin: 0 auto;
 }
-.timer-container .intro-text{
+
+.timer-container .intro-text {
     max-width: 100%;
 }
-.timer-container .intro-text h1{
+
+.timer-container .intro-text h1 {
     font-size: 4rem;
     font-weight: 200;
     margin: 10px 0;
 }
-.timer-container .intro-text p{
+
+.timer-container .intro-text p {
     font-size: .9rem;
     color: #aaa;
 }
-.timer-container .countdonw-container{
+
+.timer-container .countdonw-container {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
     gap: 25px;
 }
-.timer-container .box{
+
+.timer-container .box {
     width: 170px;
     height: 170px;
     display: flex;
@@ -73,19 +85,22 @@ body{
     gap: 15px;
     /* border: 1px solid white; */
 }
-.timer-container .box div{
+
+.timer-container .box div {
     width: 120px;
     height: 120px;
     border: 2px solid white;
     font-size: 3rem;
-    line-height:2.4;
+    line-height: 2.4;
     border-radius: 50%;
     font-weight: bold;
 }
-.timer-container .box p{
+
+.timer-container .box p {
     font-size: 1.1rem;
 }
- .social-media{
+
+.social-media {
     width: 100%;
     left: 0;
     background-color: rgb(27, 27, 27);
@@ -93,21 +108,25 @@ body{
     padding: 4px 0;
     bottom: 0;
 }
- .social-media ul{
+
+.social-media ul {
     list-style: none;
     display: flex;
     justify-content: center;
-    gap: 20px;
+    gap: 40px;
 }
- .social-media ul li{
+
+.social-media ul li {
     font-size: 1.2rem;
     color: white;
     position: relative;
 }
-  ul li i{
+
+ul li i {
     color: white;
 }
- .social-media ul li::before{
+
+.social-media ul li::before {
     content: "Coming soon";
     font-size: .8rem;
     position: absolute;
@@ -118,11 +137,13 @@ body{
     transition: .3s ease;
     opacity: 0;
 }
- .social-media ul li:hover::before{
+
+.social-media ul li:hover::before {
     opacity: 1;
 }
+
 @media (max-width:560px) {
-    .timer-container .intro-text h1{
+    .timer-container .intro-text h1 {
         font-size: 3rem;
     }
 }

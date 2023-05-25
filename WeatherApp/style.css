@@ -1,0 +1,25 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+body{
+    background: linear-gradient(to right , blue , rgb(9, 203, 158), green);
+    padding: 20px;
+}
+.weather-container{
+    width: min(100% , 600px);
+    border: 1px solid blue;
+    margin: 100px auto;
+    padding: 1.2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    background-color: white;
+    min-height: 400px;
+}
+.weather-container h4{
+    text-align: center;
+    font-size: 3rem;
+}
