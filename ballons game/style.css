@@ -1,0 +1,242 @@
+*,*::before , *::after{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+*::selection{
+    background-color: transparent;
+}
+body{
+    height: 100vh;
+    background-image: url(/imgs/land2.jpg);
+    background-size: cover;
+    background-position: center;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.level-container{
+    width: 400px;
+    height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    position: absolute;
+    left: 50%;
+    top: 10%;
+    transform: translateX(-50%);
+    padding: 20px;
+    text-align: center;
+    border-radius: 10px;
+    z-index: 444444;
+}
+.level-container h1{
+    font-size: 3rem;
+    margin-bottom: 30px;
+}
+.level-container .game-levels h4{
+    cursor: pointer;
+    border: 1px solid black;
+    padding: 10px;
+    font-size: 2rem;
+    margin: 20px 0;
+}
+.level-container h4.count{
+    display: none;
+    animation: 1s linear count infinite;
+}
+@keyframes count {
+    0%{
+        font-size: 15rem;
+        opacity: .5;
+    }
+    100%{
+        font-size: 3rem;
+        opacity: 1;
+    }
+    
+}
+
+section{
+    display: flex;
+    height: 100%;
+}
+section .game-container{
+    /* background-color: rgba(212, 31, 25, 0.474); */
+    padding: 0 20px ;
+    width: 80%;
+
+}
+section .game-container .game-body{
+    width: 100%;
+    height: 100%;
+    /* background-color: rgba(255, 166, 0, 0.374); */
+    margin:  auto;
+    position: relative;
+}
+section .game-container .game-body .box{
+    width: 80px;
+    height: 80px;
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transition: .5s linear;
+}
+section .game-body .rail{
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    gap: 10px;
+    position: absolute;
+    bottom: 10px;
+    height: 3px;
+    /* background-color: red; */
+}
+section .game-body .rail .rail-point{
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    /* background-color: orange; */
+}
+section .game-body .ballons-area{
+    position: relative;
+    width: 100%;
+    height: calc(100% - 90px);
+    /* background-color: rgba(191, 73, 73, 0.675); */
+}
+section .game-body .ballons-area .component{
+    width: 90px;
+    height: 140px;
+    position: absolute;
+    object-fit: cover;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 1s linear;
+}
+section .game-body .ballons-area .component div.ballonimg{
+    width: 100%;
+    height: 100%;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+
+}
+section .game-body .ballons-area .ballon-gotop{
+    animation: gotop 2s linear forwards;
+}
+@keyframes gotop {
+    0%{
+        bottom:-20px
+    }
+    100%{
+        bottom: 100%;
+    }    
+}
+section .game-body .ballon-gotop .point{
+    position: absolute;
+    left: 10px;
+    top: 20px;
+    color: blue;
+    display: none;
+}
+section .game-body .ballon-gotop .show{
+    animation: showonpop .6s linear ;
+}
+@keyframes showonpop {
+    0%{
+        font-size: 2rem;
+    }
+    100%{
+        font-size: 5rem;
+    }    
+}
+.night-layer{
+    width: 80%;
+    height: 100%;
+    position: absolute;
+    z-index: 111;
+    left: 0;
+    top: 0;
+    pointer-events: none;
+}
+
+
+section .controll-board{
+    width: 20%;
+    background-color: rgba(0, 0, 0, 0.738);
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    gap: 70px;
+}
+section .lifes-section{
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    height: 100px;
+
+}
+section .heart{
+    width: 50px;
+    height: 50px;
+}
+
+section .score-section{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+section .score-section h3{
+    font-size: 2.5rem;
+    color: white;
+    text-shadow: 2px 2px black;
+}
+section .cup {
+    width: 100px;
+    height: 100px;
+    animation: checkCup 7s;
+    animation-delay: 5s;
+    animation-iteration-count: infinite;
+}
+@keyframes checkCup {
+    0%{
+        transform: rotate(0deg);
+    }
+    20%{
+        transform: rotate(20deg);
+    }
+    40%{
+        transform: rotate(-20deg);
+    }
+    60%{
+        transform: rotate(20deg);
+    }
+    80%{
+        transform: rotate(-20deg);
+    }
+    100%{
+        transform: rotate(0deg);
+    }
+}
+
+
+
+.result{
+    width: 400px;
+    height: 300px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50% , -50%);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 444444;
+    background-color: white;
+}
+.result h1{
+    font-size: 3rem;
+    color: black;
+}

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+
+    <section>
+        <div class="game-container">
+            <div class="night-layer"></div>
+            <div class="game-body">
+                <img src="/imgs/box.jpg" alt="" class="box">
+                <div class="rail">
+                </div>
+                <div class="ballons-area"></div>
+            </div>
+        </div>
+        <div class="controll-board">
+            <div class="lifes-section">
+            </div>
+            <div class="score-section">
+                <h3 class="points-number">0</h3>
+                <img src="/imgs/cup1.png" alt="" class="cup">
+            </div>
+        </div>
+    </section>
+
+
+
+    <div class="level-container">
+        <div class="game-levels">
+            <h1>choose level: </h1>
+            <h4>Easy</h4>
+            <h4>Medium</h4>
+            <h4>Hard</h4>
+        </div>
+        <h4 class="count">3</h4>
+    </div>
+
+    <div class="result">
+        <h1 class="game-result"></h1>
+    </div>
+
+
+</body>
+<script type="module" src="script.js"></script>
+</html>
+
+
+<!-- ~ first user choose the level easy , medium , hard -->
+<!-- ~ create the rail-point elements with data-CooorX (flex with gap) depending on the width of the full rail [0px -- 400px] -->
+<!-- ~ take the leftCoor of each point and put them in an array -->
+<!-- ~ depending on user level we choose how many the box will move left and right the same to the ballons number -->
+
+<!-- ! the rail-point should be in the center of the box -->
+
+
+<!-- * user level specify rail-points number , box movment speed , ballon speed  -->
+
+<!-- ~easy level rail-points: 6 , box movment speed : 300ms - 200ms  , ballon speed : 100ms - 50ms -->
+<!-- ~medium level rail-points: 9 , box movment speed : 300ms - 100ms  , ballon speed : 100ms - 50ms -->
+<!-- ~hard level rail-points: 12 , box movment speed : 300ms - 50ms , ballon speed : 70ms - 50ms -->
