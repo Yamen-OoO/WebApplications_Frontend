@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- style flie -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Owl Carousel2 library min.css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"
+        integrity="sha512-tS3S5qG0BlhnQROyJXvNjeEM4UpMXHrQfTGmbQ1gKmelCxlSEBUaxhRBj/EFTzpbP4RVSrpEikbmdJobCvhE3g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+</head>
+
+<body>
+    <div class="container">
+        <div class="computer-section">
+            <div class="owl-carousel owl-theme">
+                <div class="card"><img src="/imgs/paper.png" alt=""></div>
+                <div class="card"><img src="/imgs/rock.png" alt=""></div>
+                <div class="card"><img src="/imgs/scissor.png" alt=""></div>
+            </div>
+        </div>
+        <div class="user-section">
+            <div class="owl-carousel owl-theme">
+                <div class="card" data-value="paper"><img src="/imgs/paper.png" alt=""></div>
+                <div class="card" data-value="rock"><img src="/imgs/rock.png" alt=""></div>
+                <div class="card" data-value="scissor"><img src="/imgs/scissor.png" alt=""></div>
+            </div>
+        </div>
+    </div>
+    <div class="result">
+        <h1>Computer Wins</h1>
+    </div>
+    <div class="userPoints points">
+        <span class="point"></span>
+        <span class="point"></span>
+    </div>
+    <div class="computerPoints points">
+        <span class="point"></span>
+        <span class="point"></span>
+    </div>
+    <div class="computer-ChoosenCard">
+        <div class="card">
+            <img src="/imgs/paper.png" alt="">
+        </div>
+    </div>
+    <div class="user-ChoosenCard">
+        <div class="card">
+            <img src="/imgs/paper.png" alt="">
+        </div>
+    </div>
+
+</body>
+<!-- 0. jquery cdn -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.2/jquery.min.js"
+    integrity="sha512-tWHlutFnuG0C6nQRlpvrEhE4QpkG1nn2MOUMWmUeRePl4e3Aki0VB6W1v3oLjFtd0hVOtRQ9PHpSfN6u6/QXkQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+<!-- Owl Carousel2 library -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"
+    integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+<!-- init owl carousel -->
+<script>
+    $('.owl-carousel').owlCarousel({
+        loop: true,
+        margin: 26,
+        nav: false,
+        autoplay: true,
+        center:true,
+        autoplayTimeout: 5000,
+        autoplayHoverPause: true,
+        responsive: {
+            0: {
+                items: 1
+            },
+            600: {
+                items: 2
+            },
+            1000: {
+                items: 3
+            }
+        }
+    })  
+</script>
+<script src="/script.js"></script>
+</html>

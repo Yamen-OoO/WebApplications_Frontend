@@ -1,0 +1,175 @@
+* , *::before , *::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* outline: 1px solid black; */
+}
+body{
+    height: 100vh;
+    overflow: hidden;
+    background-color: #d9ff6fd4;
+}
+.container{
+    width: 70%;
+    margin: auto;
+    height: 100%;
+    position: relative;
+}
+.computer-section{
+    top: 0;
+    width: 100%;
+    height: 40%;
+    position: absolute;
+    transition: .4s linear;
+
+}
+.computer-section .owl-item .card{
+    width: 300px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    pointer-events: pointer;
+    transition: .2s linear;
+    background-color: #FF7B7B;
+}
+.computer-section .owl-item .card img{
+    width: 50%;
+    height: 250px;
+    transform: rotate(180deg);
+}
+.computer-section .owl-item .card:hover{
+    background-color: #aa3434cb;
+
+}
+
+
+
+.user-section{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 39%;
+    width:100% ;
+    transition: .4s linear;
+    /* background-color: red; */
+}
+.user-section .owl-item .card{
+    max-width: 300px;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: .3s linear;
+    background-color: #2EB3FD;
+}
+.user-section .owl-item .card img{
+    width: 50%;
+    height: 250px;
+    pointer-events: none;
+}
+.user-section .owl-item .card:hover{
+    background-color: rgba(255, 139, 97, 0.724);
+}
+
+
+
+.computer-ChoosenCard{
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top:-100%;
+    z-index: 1111;
+    transition: .4s linear;
+
+}
+.computer-ChoosenCard .card{
+    width: 300px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: .3s linear;
+    background-color: #FF7B7B;
+}
+.computer-ChoosenCard .card img{
+    width: 50%;
+    height: 250px;
+    transform: rotate(180deg);
+}
+
+.user-ChoosenCard{
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: -100%;
+    z-index: 1111;
+    transition: .4s linear;
+
+}
+.user-ChoosenCard .card{
+    width: 300px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: .3s linear;
+    background-color: #2EB3FD;
+}
+.user-ChoosenCard .card img{
+    width: 50%;
+    height: 250px;
+}
+
+
+.result{
+    width: 350px;
+    height: 260px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    z-index: 10000;
+    place-content: center;
+    border-radius: 20px;
+    display: none;
+    opacity: 0;
+    transition: .4s linear;
+}
+.result h1{
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    text-transform: capitalize;
+}
+
+
+
+
+
+
+.points{
+    display: flex;
+    justify-content: space-around;
+    width: 60px;
+    height: 20px;
+    position: absolute;
+    /* border: 1px solid red; */
+}
+.userPoints {
+    left: 90px;
+    bottom: 30px;
+}
+.computerPoints {
+    right: 90px;
+    top: 30px;
+}
+.points .point{
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 1px solid black;
+    /* background-color: #2EB3FD; */
+}
