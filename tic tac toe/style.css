@@ -1,0 +1,132 @@
+*::before , *::after , *{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+body{
+    background-color: #121111;
+}
+.game-placeholder{
+    height: 100vh;
+    overflow: hidden;
+    /* width: 100px; */
+    background-image: url(/imgs/backgroundsquares.png);
+    /* background-color: rgba(255, 255, 0, 0.635); */
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    top: 0;
+    left: 0;
+    /* z-index:1; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 30px;
+}
+.game-placeholder::before{
+    content: "";
+    position: absolute;
+    top: -100%;
+    left: 0;
+    width: 100%;
+    height: 300px;
+    background-color: #CC0000;
+    box-shadow: 20px 20px 50px 50px #CC0000;
+    z-index: -1;
+    animation: redbackground 6s 0s infinite linear;
+
+}
+@keyframes redbackground {
+    0%{
+        top: -100%;
+        display: block;
+    }
+    100%{
+        top: 100%;
+        display: none;
+    }
+}
+
+
+.game-container{
+    width: 450px;
+    height: 450px;
+    background-color: #202020;
+    display: grid;
+    grid-template-columns: repeat(3 , 150px);
+    grid-template-rows: repeat(3 , 150px);
+}
+.game-container span{
+    border: 5px solid #3c3c3c;
+    display: grid;
+    place-content: center;
+    cursor: pointer;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    font-size: 5rem;
+}
+.fullCell{
+    pointer-events: none;
+    background-color: #aaa;
+}
+
+
+.game-control{
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+.game-container .points{
+    display: flex;
+    flex-direction: column;
+}
+.game-control h3{
+    font-size: 2rem ;
+    color: white;
+}
+.game-control .points span{
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 1px solid white;
+}
+
+
+
+.result-placeholder{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50% , -50%);
+    width: 400px;
+    background-color: red;
+    text-align: center;
+    font-size: 3rem;
+}
+
+
+
+.fadeToRight{
+    animation: fadeToRight 2s linear;
+}
+@keyframes fadeToRight {
+    0%{
+        opacity: 0;
+        left: 40%;
+    }
+    100%{
+        opacity: 1;
+        left: 50%;
+    }
+}
+
+
+.redColor {
+    color: red;
+}
+.blueColor{
+    color: blue;
+}
