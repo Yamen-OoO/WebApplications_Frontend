@@ -112,7 +112,7 @@ function checkWinner(PlayerArray , sign){
                 XTurn = true
             }
             i++
-        },300)
+        },400)
     }
 }
 
