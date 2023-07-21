@@ -70,7 +70,7 @@ body{
 }
 .fullCell{
     pointer-events: none;
-    background-color: #aaa;
+    background-color: #0a0a0a;
 }
 
 
@@ -79,9 +79,10 @@ body{
     gap: 20px;
     align-items: center;
 }
-.game-container .points{
+.game-control .points{
     display: flex;
     flex-direction: column;
+    gap: 10px;
 }
 .game-control h3{
     font-size: 2rem ;
@@ -102,15 +103,19 @@ body{
     top: 50%;
     transform: translate(-50% , -50%);
     width: 400px;
-    background-color: red;
+    background-color: rgba(255, 255, 255, 0);
     text-align: center;
     font-size: 3rem;
+    border-radius: 10px;
+    border: 10px solid red;
+    display: none;
+    color: white;
 }
 
 
 
 .fadeToRight{
-    animation: fadeToRight 2s linear;
+    animation: fadeToRight 1s linear;
 }
 @keyframes fadeToRight {
     0%{
@@ -125,8 +130,9 @@ body{
 
 
 .redColor {
-    color: red;
+    color: white;
+    text-shadow: 5px 5px 20px rgb(156, 0, 0);
 }
 .blueColor{
-    color: blue;
-}
+    color: white;
+    text-shadow: 5px 5px 20px blue;}
